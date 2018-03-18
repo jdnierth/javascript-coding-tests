@@ -1,0 +1,28 @@
+{
+  "name": "hackerrank-algorithms",
+  "version": "1.0.0",
+  "description": "Solving code riddles published on hackerrank and writing own tests for it",
+  "main": "main.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jdnierth/hackerrank-algorithms.git"
+  },
+  "keywords": [
+    "javascript",
+    "css",
+    "html"
+  ],
+  "author": "jessica.nierth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdnierth/hackerrank-algorithms/issues"
+  },
+  "homepage": "https://github.com/jdnierth/hackerrank-algorithms#readme",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "3.2.0"
+  }
+}
