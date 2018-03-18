@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorting array of numbers</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        pre {
+            background-color: #efefef;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 90%;
+        }
+
+        .result {
+            background-color: #98FB98;
+            border: 1px solid #6aaf6a;
+            border-radius: 8px;
+            display: block;
+            padding: 20px;
+            text-align: center;
+            width: 90%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Exercise</h1>
+    <p>
+        Rewrite the JavaScript <code>sort</code> so that the following array of numbers will be sorted ascendingly.
+    </p>
+    <code>
+        [16,10,12,2,1]
+    </code>
+
+    <h2>Results</h2>
+
+    <h3>Calling native sort</h3>
+    <p>Sort sorts numbers lexicographically therefore 10 follows 1 and 12 follows 10 as 0 is lexicographically ordered
+        before 2</p>
+    <pre>[16,10,12,2,1].sort();</pre>
+    <code class="result" id="result-1"></code>
+
+    <h3>Calling new sort function</h3>
+    <p>
+        Sort awaits a compare function with the following rules:
+    </p>
+    <ul>
+        <li>0: if a and b are equal</li>
+        <li>> 0: if a is bigger than b</li>
+        <li>< 0: if a is smaller than b</li>
+    </ul>
+
+
+    <pre>
+function _sortAscending(a,b) {
+    return a - b;
+}
+
+function _sortNumersAscending(numbers) {
+    return numbers.sort(_sortAscending);
+}</pre>
+
+    <code class="result" id="result-2"></code>
+
+    <h3>How does the new sort function work?</h3>
+    <p>10,2,16,12,1</p>
+    <p>10,2,12,16,1</p>
+    <p>10,2,12,1,16</p>
+    <p>2,10,12,1,16</p>
+    <p>2,10,1,12,16</p>
+    <p>2,1,10,12,16</p>
+    <p>1,2,10,12,16</p>
+
+    <script src="app.js"></script>
+</div>
+</body>
+</html>
