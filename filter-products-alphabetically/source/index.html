@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter list of products</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        pre {
+            background-color: #efefef;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 90%;
+        }
+
+        code {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            background-color: #98FB98;
+            border: 1px solid #6aaf6a;
+            border-radius: 8px;
+            display: block;
+            padding: 20px;
+            text-align: center;
+            width: 90%;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        ul li.lv-0 {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+
+        ul li {
+            list-style-type: none;
+        }
+
+        ol li {
+            list-style-type: decimal;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Exercise</h1>
+    <p>
+        Sort the list of products alphabetically and sectioned by the character of the alphabet.
+    </p>
+    <code>
+        var products = [
+        " 3Doodler 3D Printing Pen",
+        "Game of Thrones Wax Seal Coasters",
+        "10th Doctor Sonic Screwdriver Exclusive Programmable TV Remote",
+        "Electronic Butterfly in a Jar",
+        "Aquafarm: Aquaponics Fish Garden",
+        "Cassette Adapter Bluetooth",
+        "Marvel Comics Lightweight Infinity Scarf",
+        "Ollie - The App Controlled Robot",
+        "Sound Splash Bluetooth Waterproof Shower Speaker",
+        "PowerCube",
+        "Backpack of Holding",
+        "Retro Duo Portable NES/ SNES Game System",
+        "Universal Gadget Wrist Charger",
+        "USB Squirming Tentacle",
+        "USB Fishquarium", "Space Bar Keyboard Organizer & USB Hub Pop",
+        "USB Pet Rock",
+        "Powerstation 5- E. Maximus Chargus",
+        "Dual Heated Travel Mug",
+        "Crosley Collegiate Portable USB Turntable",
+        "Meh Hoodie",
+        "Magnetic Accelerator Cannon",
+        "8-Bit Legendary Hero Heat-Change Mug"
+        ]
+    </code>
+
+    <h2>Result</h2>
+    <code class="result" id="result-1"></code>
+
+    <script src="scripts/app.js"></script>
+</div>
+</body>
+</html>
