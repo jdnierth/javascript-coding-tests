@@ -38,5 +38,3 @@ var Header = (function Header() {
     }
 
 })();
-
-$(document).ready(Header.init);

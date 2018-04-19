@@ -1,4 +1,4 @@
-var Carousel = (function carousel() {
+var Carousel = (function Carousel() {
 
     var $content = $("[rel=js-carousel] > [rel=js-content]");
     var $items = $content.children("[rel=js-items]");
@@ -32,7 +32,6 @@ var Carousel = (function carousel() {
     }
 
     function init() {
-
         var contentWidth = $content.width();
         var itemsWidth = $items.width();
         position = 0;
@@ -40,12 +39,10 @@ var Carousel = (function carousel() {
 
         $left.on('click', scrollLeft);
         $right.on('click', scrollRight);
-        $items.on('click', Details.loadContent);
+        $items.on('click', Details.loadPerson);
     }
 
     return {
         init: init
     }
 })();
-
-$(document).ready(Carousel.init);

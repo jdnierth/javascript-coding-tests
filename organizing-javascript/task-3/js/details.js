@@ -6,7 +6,7 @@ var Details = (function Details() {
         $content = $("[rel=js-details]");
     }
 
-    function loadContent(e) {
+    function loadPerson(e) {
         var $trigger = $(e.target);
 
         var classname = $trigger.attr('rel');
@@ -31,9 +31,7 @@ var Details = (function Details() {
 
     return {
     	init: init,
-        loadContent: loadContent
+        loadPerson: loadPerson
 
 	}
 })();
-
-$(document).ready(Details.init);
