@@ -1,4 +1,4 @@
-var Header = (function () {
+var Header = (function Header() {
 
     var $modal;
 

@@ -1,44 +1,51 @@
-$(document).ready(function(){
+var Carousel = (function carousel() {
 
-	function scrollLeft(evt) {
-		evt.preventDefault();
-		evt.stopPropagation();
-		evt.stopImmediatePropagation();
+    var $content = $("[rel=js-carousel] > [rel=js-content]");
+    var $items = $content.children("[rel=js-items]");
+    var $left = $("[rel=js-carousel] > [rel=js-controls] > [rel=js-left]");
+    var $right = $("[rel=js-carousel] > [rel=js-controls] > [rel=js-right]");
+    var position;
+    var maxPosition;
 
-		if (position > 0) {
-			position = Math.max(0,position - 250);
-		}
+    function scrollLeft(evt) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        evt.stopImmediatePropagation();
 
-		$items.css({ left: (-position) + "px" });
-	}
+        if (position > 0) {
+            position = Math.max(0, position - 250);
+        }
 
-	function scrollRight(evt){
-		evt.preventDefault();
-		evt.stopPropagation();
-		evt.stopImmediatePropagation();
+        $items.css({left: (-position) + "px"});
+    }
 
-		if (position < maxPosition) {
-			position = Math.min(maxPosition,position + 250);
-		}
+    function scrollRight(evt) {
+        evt.preventDefault();
+        evt.stopPropagation();
+        evt.stopImmediatePropagation();
 
-		$items.css({ left: (-position) + "px" });
-	}
+        if (position < maxPosition) {
+            position = Math.min(maxPosition, position + 250);
+        }
 
-	var $content = $("[rel=js-carousel] > [rel=js-content]");
-	var $items = $content.children("[rel=js-items]");
-	var $left = $("[rel=js-carousel] > [rel=js-controls] > [rel=js-left]");
-	var $right = $("[rel=js-carousel] > [rel=js-controls] > [rel=js-right]");
+        $items.css({left: (-position) + "px"});
+    }
 
+    function init() {
 
-	var contentWidth = $content.width();
-	var itemsWidth = $items.width();
-	var position = 0;
-	var maxPosition = (itemsWidth - contentWidth);
+        var contentWidth = $content.width();
+        var itemsWidth = $items.width();
+        position = 0;
+        maxPosition = (itemsWidth - contentWidth);
 
-	// attach click handlers for the `$left` and `$right` buttons,
-	// that call the `scrollLeft(..)` and `scrollRight(..)` functions,
-	// respectively
-	$left.on('click', scrollLeft);
-	$right.on('click', scrollRight);
+        $left.on('click', scrollLeft);
+        $right.on('click', scrollRight);
+        $items.on('click', Details.loadContent);
+    }
 
-});
+    return {
+        init: init
+    }
+})();
+
+$(document).ready(Carousel.init);
