@@ -5,13 +5,13 @@ $(document).ready(function() {
     initHeader();
     
     function initHeader() {
-        $('.js-header a').on('click', getFile);
+        $("[rel=js-header]").on('click', getFile);
     }
 
     function getFile(e) {
         e.preventDefault();
 
-        var $anchor = $(e.currentTarget);
+        var $anchor = $(e.target);
 
         var file = $anchor.attr('href');
 
