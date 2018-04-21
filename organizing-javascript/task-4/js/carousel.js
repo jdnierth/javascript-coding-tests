@@ -41,6 +41,8 @@ var Carousel = (function Carousel() {
 
         $left.on('click', scrollLeft);
         $right.on('click', scrollRight);
-        $items.on('click', Details.loadPerson);
+        $items.on('click', function(e) {
+            EVT.emit('evt:loadPerson', e);
+        });
     }
 })();

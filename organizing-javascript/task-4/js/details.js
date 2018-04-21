@@ -3,6 +3,7 @@ var Details = (function Details() {
     var $content;
 
     window.EVT.on("evt:init", init);
+    window.EVT.on("evt:loadPerson", loadPerson);
 
     function init() {
         $content = $("[rel=js-details]");
@@ -30,8 +31,4 @@ var Details = (function Details() {
         var classnameLength = classname.length;
         return classname.substring(classnameLength - 1, classnameLength);
     }
-
-    return {
-        loadPerson: loadPerson
-	}
 })();

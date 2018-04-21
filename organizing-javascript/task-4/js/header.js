@@ -25,7 +25,6 @@ var Header = (function Header() {
     }
 
     function loadFile(fileName) {
-
         $.ajax({
             url: fileName,
             dataType: 'text'
