@@ -7,6 +7,8 @@ var Carousel = (function Carousel() {
     var position;
     var maxPosition;
 
+    window.EVT.on("evt:init", init);
+
     function scrollLeft(evt) {
         evt.preventDefault();
         evt.stopPropagation();
@@ -40,9 +42,5 @@ var Carousel = (function Carousel() {
         $left.on('click', scrollLeft);
         $right.on('click', scrollRight);
         $items.on('click', Details.loadPerson);
-    }
-
-    return {
-        init: init
     }
 })();

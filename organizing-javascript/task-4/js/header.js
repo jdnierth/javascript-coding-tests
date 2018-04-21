@@ -2,6 +2,8 @@ var Header = (function Header() {
 
     var $modal;
 
+    window.EVT.on("evt:init", init);
+
     function init() {
         $modal = $('#modal');
         initHeader();
@@ -36,10 +38,6 @@ var Header = (function Header() {
 
     function closeModal() {
         $modal.hide();
-    }
-
-    return {
-        init: init
     }
 
 })();

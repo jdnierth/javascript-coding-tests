@@ -2,6 +2,8 @@ var Details = (function Details() {
 
     var $content;
 
+    window.EVT.on("evt:init", init);
+
     function init() {
         $content = $("[rel=js-details]");
     }
@@ -30,8 +32,6 @@ var Details = (function Details() {
     }
 
     return {
-    	init: init,
         loadPerson: loadPerson
-
 	}
 })();
