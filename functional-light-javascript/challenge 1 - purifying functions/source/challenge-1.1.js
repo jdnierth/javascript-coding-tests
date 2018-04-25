@@ -14,26 +14,26 @@
 	z;		// 175
  */
 
-function bar(y, x) {
-	
-	var z;
-	
-	foo(x);
-	
-	function foo(x) {
-		y++;
-		
-		return z = x * y;
-	}
-	
-	return [y, z];
-	
+function F(x,y) {
+    var z;
+
+    function foo(x) {
+
+        y++;
+        return z = x * y;
+    }
+
+
+    z = foo(x);
+
+
+    return z;
 }
 
-z = bar(5, 20);
+var z;
 
-console.log(z[1]);
+z = F(20,5);
+console.log(z);		            // 120
 
-z = bar(z[0], 25);
-
-console.log(z[1]);
+z = F(25,6);
+console.log(z);		            // 175
