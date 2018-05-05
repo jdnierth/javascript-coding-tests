@@ -17,7 +17,7 @@
     var called = function () {
         console.log('hello');
     };
-    
+
     var afterCalled = after(3, called);
 
     afterCalled(); // -> nothing is printed
