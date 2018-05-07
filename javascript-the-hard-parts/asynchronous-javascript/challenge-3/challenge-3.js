@@ -2,26 +2,14 @@
 
 (function () {
 
-    function outer() {
-        var counter = 0; // this variable is outside incrementCounter's scope
-        function incrementCounter () {
-            counter ++;
-            console.log('counter', counter);
-        }
-        return incrementCounter;
-    }
+console.log('I am at the beginning of the code');
 
-    var willCounter = outer();
-    var jasCounter = outer();
+setTimeout(print,0);
 
-// Uncomment each of these lines one by one.
-// Before your do, guess what will be logged from each function call.
+function print() {
+	console.log('I am in the setTimeout callback function');
+}
 
-willCounter(); // 1
-willCounter(); // 2
-willCounter(); // 3
-
-jasCounter(); // 1
-willCounter(); // 4
+console.log('I am at the end of the code');
 
 })();
