@@ -1,6 +1,6 @@
 Find the following elements:
 - Definitions - 3x (line 1, line 7, line 9)
-- Function names - 0x
+- Function names - 1x (line 1 'nameImprover')
 - Invocations - 1x (line 5)
 - Arguments - 1x (line 7)
 - Parameters - 3x (line 1, line 7)
