@@ -1,5 +1,5 @@
 Find the following elements:
-- Definitions - 1x (line 1)
+- Definitions - 3x (line 1, line 7, line 9)
 - Function names - 0x
 - Invocations - 1x (line 5)
 - Arguments - 1x (line 7)
