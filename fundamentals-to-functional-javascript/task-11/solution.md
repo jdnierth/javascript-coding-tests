@@ -1,6 +1,7 @@
 Find the following elements:
 - Definitions - 3x (line 1, line 7, line 9)
-- Function names - 1x (line 1 'nameImprover')
+- Function declaration: 1x (line 1 because it is assigned to a variable)
+- Function names - 5x ('nameImprover', 'hide','forEach', 'log','on')
 - Invocations - 1x (line 5)
 - Arguments - 1x (line 7)
 - Parameters - 3x (line 1, line 7)
