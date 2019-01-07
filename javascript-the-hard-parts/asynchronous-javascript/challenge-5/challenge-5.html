@@ -9,14 +9,23 @@
 <h1>Challenge 5</h1>
 <ul>
     <li>
-        Write a function <code>once</code> that accepts a callback as input and returns a function.
-    </li>
-    <li>
-        When the returned function is called the first time, it should call the callback and return that output.
-    </li>
-    <li>
-        If it is called any additional times, instead of calling the callback again it will simply return the output value from the first time it was called.
-    </li>
+        Write a function <code>everyXsecsForYsecs</code> that will accept three arguments: a function, 
+		an interval time in seconds, and a total time in seconds. 
+	</li>
+	<li>
+		<code>everyXsecsForYsecs</code> should invoke the given function every X times 1000 milliseconds, 
+		but then stop invoking the function after Y times 1000 milliseconds.
+	</li>
+	<li>
+		Write function <code>sayHowdy</code> that will log <code>"Howdy"</code> to the console. 
+		
+	</li>
+	<li>
+		Then test your <code>everyXsecsForYsecs</code> function by using it to invoke <code>sayHowdy</code> every 1 second for 5 seconds.
+	</li>
+	<li>
+		Now, modify your everyXsecsForYsecs function so it does not use <code>setInterval</code>, but still keeps the same functionality. 
+	</li>
 </ul>
 
 <script src="challenge-5.js"></script>
