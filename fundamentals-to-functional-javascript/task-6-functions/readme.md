@@ -8,4 +8,4 @@ Find the following elements:
 - Return values
 - Side effects
 
-![Screenshot](task-11.jpg)
+![Screenshot](task-6.jpg)

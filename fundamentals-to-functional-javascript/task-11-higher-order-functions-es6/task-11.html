@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Task 11 - Higher order function ES6</title>
+</head>
+<body>
+<h1>Task 11 - Higher order function ES6</h1>
+
+<p>
+    Rewrite the following code in ES6
+</p>
+<pre>
+    <code>
+        var increment = function(n) {
+            return n + 1;
+        };
+
+        var square = function(n) {
+            return n * n;
+        };
+
+        var doMathSoIDontHaveTo = function(n, func) {
+            return func(n);
+        };
+
+        doMathSoIDontHaveTo(4, increment);
+        doMathSoIDontHaveTo(5, square);
+    </code>
+</pre>
+
+<script src="task-11.js"></script>
+
+</body>
+</html>

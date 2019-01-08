@@ -9,4 +9,4 @@ Find the following elements:
 - Return values - 1x (line 2)
 - Side effects - 3x (console.log as you are logging to console that exists outside of that function, hide function)
 
-![Screenshot](task-11.jpg)
+![Screenshot](task-6.jpg)
