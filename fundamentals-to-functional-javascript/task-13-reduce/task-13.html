@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Task 13 - Reduce</title>
+</head>
+<body>
+<h1>Task 13 - Usage of the reduce function</h1>
+
+<p>
+  Use reduce to implement the add function.
+</p>
+
+<pre>
+    _.reduce(collection,cb,acc)
+</pre>
+Example 1
+<pre>
+    _.reduce([1,5,6],add,0) // 12
+</pre>
+
+Example 2
+<pre>
+    _reduce({a:1,b:2,c:1},function(result,value,key) {
+        (result[value] || (result[value] = [])).push(key);
+        return result;
+    },{});
+</pre>
+Example 2 should print out: {'1': ['a','c'], '2':['b']};
+
+<script src="task-13.js"></script>
+
+</body>
+</html>
