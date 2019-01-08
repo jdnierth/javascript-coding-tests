@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Task 12 - Spread operator before ES6</title>
+</head>
+<body>
+<h1>Task 12 - Spread operator before ES6</h1>
+
+<p>
+    Rewrite the following code in ES6
+</p>
+<pre>
+    <code>
+        const ifElse = (condition, isTrue, isFalse, ...args) {
+            console.log(args) // []
+            return condition? isTrue(...args) : isFalse(...args);
+        }
+        ifElse(true, fn1, fn2, 'Hi', 'Bye', 'Hola');
+    </code>
+</pre>
+
+<script src="task-12.js"></script>
+
+</body>
+</html>
