@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Task 17 - Composition</title>
+</head>
+<body>
+<h1>Task 17 - Composition</h1>
+
+<p>
+    Implement your own composition function
+</p>
+
+<pre>
+   const consider = (name) => {
+    return `I think it could be... ${name}`;
+    };
+
+    const exclaim  = (statement) => {
+      return `${statement.toUpperCase()}!`;
+    };
+
+    const blame = _.compose(consider, exclaim);
+
+    blame('you');
+
+    => 'I think it could be... YOU!'
+</pre>
+
+<script src="task-16.js"></script>
+
+</body>
+</html>
