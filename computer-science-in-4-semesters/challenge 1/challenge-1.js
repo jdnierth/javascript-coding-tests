@@ -1,11 +1,21 @@
 (function factorial() {
 
-    var n = 5;
-    var result = facIter(3);
-    var result2 = facRecursive(3);
+    var n = 15;
+    var resultFac = facIter(n);
 
-    console.log('The factorial of: ' + n + '(' + n + ') is: ' + result);
-    console.log('The factorial of: ' + n + '(' + n + ') is: ' + result2);
+    var start = Date.now(); console.log(start);
+    var resultRec = facRecursive(n);
+    var end;
+    var timerRec = setInterval(function() {
+        if(resultRec) {
+            end = Date.now();
+            console.log('end: ',end);
+            console.log('The factorial of: ' + n + '(' + n + '!) is: ' + resultRec + ' time for it to run: ' + (end - start));
+            clearInterval(timerRec);
+        }
+    });
+
+    console.log('The factorial of: ' + n + '(' + n + '!) is: ' + resultFac.result + ' time for it to run: ' + resultFac.time);
 
     ///////////////////////////////
 
@@ -16,7 +26,9 @@
      * @returns {number} result of the factorial calcultion.
      */
     function facIter(n) {
-        var result = 1;
+        var result = 1,
+            end,
+            start = Date.now();
 
         for (var i = 0; i <= n; i++) {
             if (i === 0) {
@@ -26,7 +38,12 @@
             }
         }
 
-        return result;
+        end = Date.now();
+
+        return {
+            time: end - start,
+            result: result,
+        };
     }
 
     /**
@@ -36,7 +53,6 @@
      * @returns {number}
      */
     function facRecursive(n) {
-
         if(n <= 0) {
             return 1;
         } else {
