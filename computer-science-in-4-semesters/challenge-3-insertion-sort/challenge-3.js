@@ -9,7 +9,6 @@
 
     function insertionSort(nums) {
         var outputArray = [];
-        console.log('MAX LENGTH: ', nums.length);
 
         for (var i = 0, length = nums.length; i < length; i++) {
 
