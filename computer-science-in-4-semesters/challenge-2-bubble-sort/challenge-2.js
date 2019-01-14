@@ -1,17 +1,18 @@
 (function bubbleSort() {
     var count = 0,
-        inputArray = [6, 1, 3, 5, 4, 2],
+        inputArray = [10,5,3,8,2,6,4,7,9,1],
         result = bubbleSort(inputArray);
 
     console.log('Input: ', inputArray, ' result: ', result, ' iterations: ', count);
 
     ///////////////////////////////
 
-    function bubbleSort(nums, cb) {
+    function bubbleSort(nums) {
 
         var outputArray = Object.assign([], nums);
 
         for (var i = 0, length = nums.length; i < length; i++) {
+            count = count + 1;
 
             var n1 = outputArray[i],
                 n2 = outputArray[i + 1];
@@ -23,8 +24,6 @@
             }
 
             if ((i + 1) === length) {
-
-                count = count + 1;
 
                 if (!isSorted(outputArray)) {
                     return bubbleSort(outputArray);

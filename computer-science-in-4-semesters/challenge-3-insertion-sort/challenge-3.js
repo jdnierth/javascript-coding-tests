@@ -1,6 +1,6 @@
 (function insertionSort() {
     var count = 0,
-        inputArray = [6, 1, 3, 5, 4, 2],
+        inputArray = [10,5,3,8,2,6,4,7,9,1],
         result = insertionSort(inputArray);
 
     console.log('Input: ', inputArray, ' result: ', result, ' iteration: ', count);
@@ -26,6 +26,7 @@
     function insertNewNumber(outputArray, newNumber) {
         for(var i = 0, len = outputArray.length; i < len; i++) {
             if(outputArray[i] > newNumber) {
+                count = count + 1;
                 outputArray.splice(i,0,newNumber);
                 break;
             }
