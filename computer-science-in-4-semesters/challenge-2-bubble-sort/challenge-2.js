@@ -3,11 +3,11 @@
         inputArray = [6, 1, 3, 5, 4, 2],
         result = bubbleSort(inputArray);
 
-    console.log('Input: ', inputArray, ' result: ', result);
+    console.log('Input: ', inputArray, ' result: ', result, ' iterations: ', count);
 
     ///////////////////////////////
 
-    function bubbleSort(nums) {
+    function bubbleSort(nums, cb) {
 
         var outputArray = Object.assign([], nums);
 
@@ -27,7 +27,7 @@
                 count = count + 1;
 
                 if (!isSorted(outputArray)) {
-                    bubbleSort(outputArray);
+                    return bubbleSort(outputArray);
                 } else {
                     return outputArray;
                 }
