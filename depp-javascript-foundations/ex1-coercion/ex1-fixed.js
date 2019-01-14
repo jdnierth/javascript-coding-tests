@@ -67,7 +67,7 @@ function addProjectSelection(projectEntryData) {
 }
 
 function findProjectEntry(projectId) {
-	for (var i = 0; i < projects.length; i++) {
+	for (let i = 0; i < projects.length; i++) {
 		if (projects[i].id === projectId) {
 			return projects[i];
 		}
