@@ -1,41 +1,34 @@
 (function bubbleSort() {
-    var count = 0;
-    var inputArray = [6, 1, 3, 5, 4, 2];
-    var result = bubbleSort(inputArray);
+    var count = 0,
+        inputArray = [6, 1, 3, 5, 4, 2],
+        result = bubbleSort(inputArray);
 
     console.log('Input: ', inputArray, ' result: ', result);
 
     ///////////////////////////////
 
     function bubbleSort(nums) {
-        var length = nums.length;
-        console.log('BUBBLE SORT: ', nums, ' ',nums.length);
 
         var outputArray = Object.assign([], nums);
 
-        for (var i = 0; i < length; i++) {
-            console.log('1: ');
-            var n1 = outputArray[i];
+        for (var i = 0, length = nums.length; i < length; i++) {
 
-            var n2 = outputArray[i + 1];
+            var n1 = outputArray[i],
+                n2 = outputArray[i + 1];
 
             // Swap numbers
             if (n1 > n2) {
-
                 outputArray[i] = n2;
                 outputArray[i + 1] = n1;
-
-
             }
 
             if ((i + 1) === length) {
 
                 count = count + 1;
+
                 if (!isSorted(outputArray)) {
-                    console.log('is not sorted, call bubblesort again on this: ', outputArray);
                     bubbleSort(outputArray);
                 } else {
-                    console.log('Break');
                     return outputArray;
                 }
             }
@@ -50,7 +43,7 @@
      */
     function isSorted(nums) {
         var length = nums.length;
-        console.log('nUMS: ', nums);
+
         for (var i = 0; i < length; i++) {
             if ((i + 1) <= length) {
                 if (nums[i] > nums[i + 1]) {
