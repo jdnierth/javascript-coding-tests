@@ -1,5 +1,4 @@
 // unit tests
-// do not modify the below code
 describe('merge sort', function () {
     it('should sort correctly', function (done) {
         var nums = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1];
