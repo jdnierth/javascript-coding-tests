@@ -1,7 +1,7 @@
 var mergeSort = (function mergeSort() {
     var count = 0,
         inputArray = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1],
-        result = mergeSort(inputArray, []);
+        result = mergeSort(inputArray);
 
     console.log('Input: ', inputArray, ' result: ', result, ' iteration: ', count);
 

@@ -11,6 +11,16 @@ describe('merge sort', function () {
         done();
     });
 
+    it('should return an empty list', function (done) {
+        var nums = [];
+
+        nums = mergeSort.mergeSort(nums);
+
+        expect(nums).toEqual([]);
+
+        done();
+    });
+
     it('lists should be merged in ascending order', function(done) {
         var nums1 = [3,5,8,9];
         var nums2 = [1,2,4,6,7];
