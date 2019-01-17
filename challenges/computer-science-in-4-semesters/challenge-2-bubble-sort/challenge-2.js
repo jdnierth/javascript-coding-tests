@@ -1,17 +1,16 @@
-(function bubbleSort() {
+var bubbleSort = (function bubbleSort() {
     var count = 0,
-        inputArray = [10,5,3,8,2,6,4,7,9,1],
-        result = bubbleSort(inputArray);
+        inputArray = [10,5,3,8,2,6,4,7,9,1];
 
-    console.log('Input: ', inputArray, ' result: ', result, ' iterations: ', count);
+    bubbleSort(inputArray);
 
     ///////////////////////////////
 
     function bubbleSort(nums) {
 
-        var outputArray = Object.assign([], nums);
+        var outputArray = nums.slice();
 
-        for (var i = 0, length = nums.length; i < length; i++) {
+        for (var i = 0, len = nums.length; i < len; i++) {
             count = count + 1;
 
             var n1 = outputArray[i],
@@ -23,7 +22,7 @@
                 outputArray[i + 1] = n1;
             }
 
-            if ((i + 1) === length) {
+            if ((i + 1) === len) {
 
                 if (!isSorted(outputArray)) {
                     return bubbleSort(outputArray);
@@ -32,6 +31,8 @@
                 }
             }
         }
+
+        return outputArray;
     }
 
     /**
@@ -54,4 +55,8 @@
         return true;
     }
 
+    return {
+        bubbleSort: bubbleSort,
+        isSorted: isSorted
+    }
 }());
