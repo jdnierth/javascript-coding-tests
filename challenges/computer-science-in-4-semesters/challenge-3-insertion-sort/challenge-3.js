@@ -1,9 +1,8 @@
-(function insertionSort() {
+var insertionSort = (function insertionSort() {
     var count = 0,
-        inputArray = [10,5,3,8,2,6,4,7,9,1],
-        result = insertionSort(inputArray);
+        inputArray = [10,5,3,8,2,6,4,7,9,1];
 
-    console.log('Input: ', inputArray, ' result: ', result, ' iteration: ', count);
+    insertionSort(inputArray);
 
     ///////////////////////////////
 
@@ -36,24 +35,9 @@
 
     }
 
-    /**
-     * Checks if an array is sorted.
-     *
-     * @param {array} nums array of numbers
-     * @returns {boolean} returns true if array is sorted else false.
-     */
-    function isSorted(nums) {
-        var length = nums.length;
 
-        for (var i = 0; i < length; i++) {
-            if ((i + 1) <= length) {
-                if (nums[i] > nums[i + 1]) {
-                    return false;
-                }
-            }
-        }
-
-        return true;
+    return {
+        insertionSort: insertionSort,
+        insertNewNumber: insertNewNumber
     }
-
 }());
