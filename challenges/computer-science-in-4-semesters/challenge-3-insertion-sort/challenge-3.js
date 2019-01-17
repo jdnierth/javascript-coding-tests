@@ -1,6 +1,5 @@
 var insertionSort = (function insertionSort() {
-    var count = 0,
-        inputArray = [10,5,3,8,2,6,4,7,9,1];
+    var inputArray = [10,5,3,8,2,6,4,7,9,1];
 
     insertionSort(inputArray);
 
@@ -16,7 +15,6 @@ var insertionSort = (function insertionSort() {
             }
 
             outputArray = insertNewNumber(outputArray, nums[i]);
-            count = count + 1;
         }
 
         return outputArray;
@@ -25,7 +23,6 @@ var insertionSort = (function insertionSort() {
     function insertNewNumber(outputArray, newNumber) {
         for(var i = 0, len = outputArray.length; i < len; i++) {
             if(outputArray[i] > newNumber) {
-                count = count + 1;
                 outputArray.splice(i,0,newNumber);
                 break;
             }

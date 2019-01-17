@@ -1,6 +1,5 @@
 var bubbleSort = (function bubbleSort() {
-    var count = 0,
-        inputArray = [10,5,3,8,2,6,4,7,9,1];
+    var inputArray = [10,5,3,8,2,6,4,7,9,1];
 
     bubbleSort(inputArray);
 
@@ -11,7 +10,6 @@ var bubbleSort = (function bubbleSort() {
         var outputArray = nums.slice();
 
         for (var i = 0, len = nums.length; i < len; i++) {
-            count = count + 1;
 
             var n1 = outputArray[i],
                 n2 = outputArray[i + 1];

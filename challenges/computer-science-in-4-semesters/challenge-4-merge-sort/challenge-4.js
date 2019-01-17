@@ -1,6 +1,5 @@
 var mergeSort = (function mergeSort() {
-    var count = 0,
-        inputArray = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1];
+    var inputArray = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1];
 
     mergeSort(inputArray);
 
@@ -23,8 +22,6 @@ var mergeSort = (function mergeSort() {
         m = Math.ceil(length / 2);
         left = nums.slice(0, m);
         right = nums.slice(m, length);
-
-        count = count + 1;
 
         return mergeLists(mergeSort(left), mergeSort(right));
     }
