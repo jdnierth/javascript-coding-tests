@@ -19,4 +19,14 @@ describe('quick sort', function () {
 
         done();
     });
+
+    it('should return a sorted list even when duplicate', function (done) {
+        var nums = [1,5,6,4,2,1,3];
+
+        nums = quickSort.quickSort(nums);
+
+        expect(nums).toEqual([1,1,2,3,4,5,6]);
+
+        done();
+    });
 });
