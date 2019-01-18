@@ -27,11 +27,7 @@ var quickSort = (function quickSort() {
                 }
             }
 
-            var sortedLeft = quickSort(left);
-
-            sortedLeft.push(pivot);
-
-            return sortedLeft.concat(quickSort(right));
+            return quickSort(left).concat(pivot, quickSort(right));
 
         }
     }
