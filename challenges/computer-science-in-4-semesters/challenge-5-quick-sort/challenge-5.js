@@ -14,7 +14,7 @@ var quickSort = (function quickSort() {
         if (len <= 1) {
             return nums;
         } else {
-            var pivot = nums[len - 1];
+            var pivot = nums[len - 1]; // Not using pop to not mutate the nums array.
             var left = [];
             var right = [];
 
