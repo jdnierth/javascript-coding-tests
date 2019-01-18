@@ -33,6 +33,8 @@ var ArrayList = (function ArrayList() {
 
     _collapseArrayList = function(index) {
         for(var i = index; i < this.length; i++ ) {
+            // Expensive action when shifting a lot of items over.
+            // Better use for delete is a LinkedList.
             this.data[i] = this.data[i+1];
         }
     };
