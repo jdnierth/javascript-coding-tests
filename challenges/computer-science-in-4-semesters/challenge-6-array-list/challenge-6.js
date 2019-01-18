@@ -1,39 +1,41 @@
-var arrayList = (function arrayList() {
-    var inputArray = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1];
+var ArrayList = (function ArrayList() {
 
-    arrayList(inputArray);
+    function ArrayList() {
+        this.length = 0;
+        this.data = {};
+    }
 
-    ///////////////////////////////
+    ArrayList.prototype.push = function(element) {
+        this.data[this.length] = element;
+        this.length++;
+    };
 
-    /**
-     * Recursively calls itself to divide the array until its size becomes one.
-     */
-    function arrayList(nums) {
-        var len = nums.length;
+    ArrayList.prototype.pop = function() {
+        var elem = this.data[this.length - 1];
+        this.length--;
+        delete this.data[this.length - 1];
+        return elem;
+    };
 
-        if (len <= 1) {
-            return nums;
-        } else {
-            var pivot = nums[len - 1]; // Not using pop to not mutate the nums array.
-            var left = [];
-            var right = [];
+    ArrayList.prototype.get = function(index) {
+        return this.data[index];
+    };
 
-            for (var i = 0; i < len - 1; i++) {
+    ArrayList.prototype.delete = function(index) {
+      var elem = this.data[index];
+      delete this.data[index];
+      this.length--;
 
-                if (nums[i] < pivot) {
-                    left.push(nums[i]);
-                } else {
-                    right.push(nums[i]);
-                }
-            }
+      _collapseArrayList(index);
 
-            return arrayList(left).concat(pivot, arrayList(right));
+      return elem;
+    };
 
+    _collapseArrayList = function(index) {
+        for(var i = index; i < this.length; i++ ) {
+            this.data[i] = this.data[i+1];
         }
-    }
+    };
 
-    return {
-        arrayList: arrayList
-    }
-
+    return ArrayList;
 }());

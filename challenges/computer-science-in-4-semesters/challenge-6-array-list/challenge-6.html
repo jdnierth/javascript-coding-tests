@@ -10,35 +10,38 @@
 <h2>Task</h2>
 
 <ul>
-    <li>Write a function <code>quickSort</code>(https://btholt.github.io/four-semesters-of-cs/)</li>
     <li>
-        Quicksort should grab a pivot from the end and then separate the list (not including the pivot)
-        into two lists, smaller than the pivot and larger than the pivot.
+        Shim an implementation of ArrayList.
     </li>
     <li>
-        Call quickSort on both of those lists independently.
+        Implement an array using objects.
     </li>
     <li>
-        Once those two lists come back sorted, concatenate the "left" (or smaller numbers) list, the pivot, and the
-        "right" (or larger numbers) list and return that. The base case is when quickSort is called on a list with
-        length less-than-or-equal-to 1. In the base case, just return the array given.
+        You should not use arrays at all in this exercise. Just objects.
+    </li>
+    <li>
+        You should have the following properties (in addition to whatever properties you create):
+
+        <ul>
+            <li>
+                length - integer  - How many elements in the array
+            </li>
+            <li>
+                push   - function - accepts a value and adds to the end of the list
+            </li>
+            <li>
+                pop    - function - removes the last value in the list and returns it
+            </li>
+            <li>
+                get    - function - accepts an index and returns the value at that position
+            </li>
+            <li>
+                delete - function - accepts an index, removes value from list, collapses, and returns removed value
+            </li>
+        </ul>
     </li>
 </ul>
-<h2>Notes</h2>
-<ul>
-    <li>
-        Choose a pivot element from the end of the list to sort
-    </li>
-    <li>
-        Separate the list (excluding the pivot) into 2 lists
-    </li>
-    <li>
-        O(n log n) but takes up less memory than mergesort.
-    </li>
-    <li>
-        Though it performs poorly if an already sorted list is passed.
-    </li>
-</ul>
+
 <pre>
     <code>
     </code>

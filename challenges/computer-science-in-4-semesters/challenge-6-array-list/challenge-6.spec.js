@@ -1,32 +1,65 @@
 // unit tests
-describe('quick sort', function () {
-    it('should sort correctly', function (done) {
-        var nums = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1];
+describe('ArrayList', function () {
+    var newObj;
 
-        nums = quickSort.quickSort(nums);
+    beforeEach(function() {
+       newObj = new ArrayList();
+    });
 
-        expect(nums).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    function _generateArrayOfNumbers(length) {
+        return Array.apply(null, {length: length}).map(function(element, index) {
+            return index + 1;
+        });
+    }
+
+    it('should return how many elements are in the ArrayList', function (done) {
+
+        _generateArrayOfNumbers(25).map(function(number) {
+            newObj.push(number);
+        });
+
+        expect(newObj.length).toEqual(25);
 
         done();
     });
 
-    it('should return an empty list', function (done) {
-        var nums = [];
+    it('should return the last element in the list', function (done) {
 
-        nums = quickSort.quickSort(nums);
+        _generateArrayOfNumbers(25).map(function(number) {
+            newObj.push(number);
+        });
 
-        expect(nums).toEqual([]);
+        expect(newObj.pop()).toEqual(25);
+
+        done();
+    });
+
+    it('should get the value of a particular index', function (done) {
+
+        _generateArrayOfNumbers(25).map(function(number) {
+            newObj.push(number);
+        });
+
+        expect(newObj.get(5)).toEqual(6);
 
         done();
     });
 
-    it('should return a sorted list even when duplicate', function (done) {
-        var nums = [1,5,6,4,2,1,3];
 
-        nums = quickSort.quickSort(nums);
+    it('should delete the value of a particular index', function (done) {
 
-        expect(nums).toEqual([1,1,2,3,4,5,6]);
+        _generateArrayOfNumbers(4).map(function(number) {
+            newObj.push(number);
+        });
+
+        expect(newObj.delete(2)).toEqual(3);
+        expect(newObj.get(3)).toEqual(4);
+        expect(newObj.length).toEqual(3);
 
         done();
     });
+
+
+
+
 });
