@@ -1,9 +1,9 @@
 // unit tests
 describe('LinkedList', function () {
-    var newObj;
+    var linkedList;
 
     beforeEach(function () {
-        newObj = new LinkedList();
+        linkedList = new LinkedList();
     });
 
     function _generateArrayOfNumbers(length) {
@@ -12,18 +12,71 @@ describe('LinkedList', function () {
         });
     }
 
+    it('should insert the element at the end of the LinkedList', function(done) {
+
+       linkedList.push(1);
+       linkedList.push(2);
+       linkedList.push(3);
+
+       expect(linkedList.pop().value).toEqual(2);
+
+       done();
+    });
+
+    it('checks if the linkedList contains a certain value', function(done) {
+
+       linkedList.push(1);
+       linkedList.push(2);
+       linkedList.push(3);
+
+       console.log(linkedList);
+       expect(linkedList.contains(3)).toBe(true);
+
+       done();
+    });
+
+    it('should return if an item is the head', function(done) {
+        linkedList.push(1);
+        linkedList.push(3);
+
+        expect(linkedList.isHead(linkedList.get(1))).toBe(true);
+
+        done();
+    });
+
+    it('should return if an item is the tail', function(done) {
+        linkedList.push(1);
+        linkedList.push(3);
+
+        expect(linkedList.isTail(linkedList.get(3))).toBe(true);
+
+        done();
+    });
+
     it('should return the last element', function (done) {
 
         _generateArrayOfNumbers(25).map(function (number) {
-            newObj.push(number);
+            linkedList.push(number);
         });
 
         var last = {
-            value: 25,
+            value: 24,
             next: null
         };
 
-        expect(newObj.pop().value).toEqual(last.value);
+        expect(linkedList.pop().value).toEqual(last.value);
+
+        done();
+    });
+
+    it('should remove an element properly', function (done) {
+
+       linkedList.push(1);
+       linkedList.push(2);
+       linkedList.push(3);
+       linkedList.delete(2);
+
+        expect(linkedList.isTail(linkedList.get(3))).toBe(true);
 
         done();
     });

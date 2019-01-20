@@ -43,11 +43,19 @@
             <th>Cons</th>
         </tr>
         <tr>
-            <td>Adding and Removing of items is fast as only a pointer has to be updated</td>
+            <td>
+                Adding and Removing of items is fast as only a pointer has to be updated.
+                Deleting the end is fast if we cache the previous node, otherwise you'll have to loop until the end of the LinkedList.
+            </td>
             <td>Read is expensive as the item has to be searched O(n) to find the item</td>
         </tr>
         <tr>
             <td>Flexible size</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Constant time adds anywhere in the list (excluding the find)</td>
+            <td></td>
         </tr>
     </table>
 </div>
