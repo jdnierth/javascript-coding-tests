@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LinkedList</title>
+    <style>
+        img {
+            display: block;
+            border: 2px solid #ccc;
+            margin: 0 auto;
+            max-width: 420px;
+        }
+
+        .col-2:after {
+            content: '';
+            clear:both;
+            display: block;
+        }
+
+        .col-2 img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        table {
+            border:1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        td {
+            border:1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>LinkedList</h1>
+<div class="col-2">
+    <img src="linked-list.JPG" alt="Linked List">
+    <table>
+        <tr>
+            <th>Pros</th>
+            <th>Cons</th>
+        </tr>
+        <tr>
+            <td>Adding and Removing of items is fast as only a pointer has to be updated</td>
+            <td>Read is expensive as the item has to be searched O(n) to find the item</td>
+        </tr>
+        <tr>
+            <td>Flexible size</td>
+        </tr>
+    </table>
+</div>
+<h2>Task</h2>
+<ul>
+    <li>
+        Shim an implementation of LinkedList.
+    </li>
+    <li>
+        LinkedList is made by making nodes that have two properties, the value that's being stored and a pointer to
+        the next node in the list.
+    </li>
+    <li>
+        The LinkedList then keeps track of the head and usually the tail
+    </li>
+    <li>
+        A Node has two properties, value and next.
+    </li>
+    <li>
+        <ul>
+            <li>length - integer - How many elements in the list</li>
+            <li>push - function - accepts a value and adds to the end of the list</li>
+            <li>pop - function - removes the last value in the list and returns it</li>
+            <li>get - function - accepts an index and returns the value at that position</li>
+            <li>delete - function - accepts an index, removes value from list, collapses,
+                and returns removed value
+            </li>
+        </ul>
+    </li>
+</ul>
+<h2>Delete</h2>
+<pre>
+    <code>
+    value: [a]   [b]   [c]   [d]
+    next:  [ ]-> [ ]-> [ ]-> [ ]-> null
+    </code>
+</pre>
+<ul>
+    <li>
+        -> delete is called on index 2 (value 'c')
+    </li>
+    <li>
+        -> grab the head (value 'a')
+    </li>
+    <li>
+        -> loop through the nexts until you get the index before the one to be deleted (value 'b')
+    </li>
+    <li>
+        -> change the the next of index 1 to be the next of index 2
+    </li>
+    <li>
+        -> decrement length
+    </li>
+    <li>
+        -> return the value of the deleted node
+    </li>
+</ul>
+
+<h2>Notes</h2>
+<ul>
+    <li>LinkedLists stores items sequentially with each item storing a pointer to the next</li>
+    <li>LinkedLists are made of nodes, each node has at least 2 properties:
+        <ul>
+            <li>1 for the link to the next node</li>
+            <li>1 for the value of what needs to be stored</li>
+        </ul>
+    </li>
+    <li>Important data structure in languages that don't have dynamic arrays. (JS arrays are dynamic, we don't need to set a size)</li>
+    <li>When to use: If you need to do a lot of adds and deletes.</li>
+    <li>Use cases: Most recently used cache (keep the older ones) or least recently used, hash tables are using linked list under the hood.
+    </li>
+</ul>
+
+<script src="node.js"></script>
+<script src="linkedList.js"></script>
+</body>
+</html>
