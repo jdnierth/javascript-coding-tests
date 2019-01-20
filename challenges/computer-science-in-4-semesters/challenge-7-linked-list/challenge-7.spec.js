@@ -29,7 +29,6 @@ describe('LinkedList', function () {
        linkedList.push(2);
        linkedList.push(3);
 
-       console.log(linkedList);
        expect(linkedList.contains(3)).toBe(true);
 
        done();
