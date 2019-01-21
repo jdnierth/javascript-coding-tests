@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Binary Search Tree (BST)</title>
+    <style>
+        img {
+            display: block;
+            border: 2px solid #ccc;
+            margin: 0 auto;
+            max-width: 420px;
+        }
+
+        .col-2:after {
+            content: '';
+            clear:both;
+            display: block;
+        }
+
+        .col-2 img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        table {
+            border:1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        td {
+            border:1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Binary Search Tree (BST)</h1>
+<h2>Task</h2>
+<ul>
+    <li>
+        Create a class called Tree.
+    </li>
+    <li>Your Tree class will have keep track of a root which will be the first item added to you tree. From there, if
+        the item is less than the value of that node, it will go into its left subtree
+        and if greater it will go to the right subtree.
+    </li>
+    <li>
+        In order for this to work and for the unit tests to pass you, you must implement a Tree .toObject function that
+        returns your tree as a series of nested objects. Those nested objects must use the following names for their
+        properties
+    </li>
+    <li>
+        Create a class called Node.
+    </li>
+    <li>
+        A Node has two properties, value and next.
+    </li>
+    <li>
+        <ul>
+            <li>value - integer     - value being contained in the node</li>
+            <li>left  - Node/object - the left node which itself may be another tree</li>
+            <li>right - Node/object - the right node which itself may be another tree</li>
+        </ul>
+    </li>
+</ul>
+
+<script src="node.js"></script>
+<script src="binary-search-tree.js"></script>
+</body>
+</html>
