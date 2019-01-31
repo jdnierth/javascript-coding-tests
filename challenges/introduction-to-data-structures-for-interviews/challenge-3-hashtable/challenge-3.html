@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HashTable</title>
+</head>
+<body>
+<h1>HashTable</h1>
+
+<p>
+    Implement the data structure of a <code>HashTable</code>. Implement the following functions:
+</p>
+<ul>
+    <li>insert:  Inserts a new key-value pair (constant time)</li>
+    <li>remove: Deletes a key-value pair (constant time)</li>
+    <li>retrieve: Returns the value associated with a key (constant time)</li>
+</ul>
+
+<h2>Notes</h2>
+<ul>
+    <li>A Hashtable is not ordered, we don't sort them although you could.</li>
+    <li>Good for fast lookups and having flexible keys.</li>
+    <li>Quick insertion with keys that can be more than numbers.</li>
+    <li>Hashing function: Mathematical calculate location of values. Takes the key (string) and hashes it to a numerical value which is an index to an array (under the hood it will be a memory address).
+        A hashing function will always give the same output for the same input.
+    </li>
+    <li>If you are implementing a HashTable once it becomes 50% full, you want to double it, then you rehash the values. The hasFunction should take the size.</li>
+</ul>
+<script src="challenge-3.js"></script>
+</body>
+</html>
