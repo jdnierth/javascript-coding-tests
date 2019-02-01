@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter</title>
+    <style>
+        img {
+            display: block;
+            border: 2px solid #ccc;
+            margin: 0 auto;
+            max-width: 420px;
+        }
+
+        .col-2:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .col-2 img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Filter</h1>
+
+<h2>Test 1</h2>
+Name your function <code>filterOutOdds</code>. Write a function that takes a list and filters out all the odd numbers.
+Takes one parameter, a list of numbers. Returns a list with only the even numbers remaining.
+
+<h2>Test 2</h2>
+Name your function <code>filterState</code>. Takes two parameters:
+<ul>
+    <li>a list of people objects that have a name and state (as in state where they're from)</li>
+    <li>a string of the state which you want to filter for</li>
+</ul>
+Returns a list of people objects (in the same order) from the state specified.
+
+<h2>Test 3</h2>
+Name your function <code>showOutOfCADevs</code>. You will need to use map, filter, and reduce (you could skip map but
+try to use it).
+<ul>
+    <li>Takes one parameter, a list of people objects (same from test 3).</li>
+    <li>Takes that list, filters out people from CA, pulls out the name strings and throws away the rest of the object,
+        uppercases the name of the person, and reduces the list down to one string, the names separated by a comma and
+        a space (", ").
+    </li>
+    <li>Use reduce, not join.</li>
+    <li>Returns a string of uppercase names, separated by a comma and a space.
+    </li>
+</ul>
+
+<h2>Test 4</h2>
+Name your function <code>myFilter</code>. <code>myFilter</code> implements filter Takes two parameters:
+<ul>
+    <li>A list that will be filtered</li>
+    <li>A function that returns true if the item stays in the list, or false if it removed</li>
+</ul>
+Returns a list that has been filtered
+
+<script src="challenge-12.js"></script>
+</body>
+</html>
