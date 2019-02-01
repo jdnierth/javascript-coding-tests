@@ -1,5 +1,5 @@
 // unit tests
-describe('LinkedList', function () {
+describe('MyMapFunctions', function () {
     var mapfunction;
 
     beforeEach(function () {
