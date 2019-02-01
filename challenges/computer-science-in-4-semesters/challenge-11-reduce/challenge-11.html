@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reduce</title>
+    <style>
+        img {
+            display: block;
+            border: 2px solid #ccc;
+            margin: 0 auto;
+            max-width: 420px;
+        }
+
+        .col-2:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .col-2 img {
+            float: left;
+            margin-right: 20px;
+        }
+
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Reduce</h1>
+
+<h2>Test 1</h2>
+Name your function <code>addTogether</code>. Take in a list and return the result of that list added together.
+Do not use a loop.
+
+<h2>Test 2</h2>
+Name your function <code>concatenateStringsWithSpaces</code>. Take in a list, return that string with those strings concatenated together with spaces between them. Don't worry about leading or trailing whitespace.
+Do not use .join or loops
+
+<h2>Test 3</h2>
+Name your function <code>squaresAndSubtracts</code>.Map over your list, square each value, and then subtract them in order (take index 0, subtract index 1, then index 2, etc.). Do not use a loop
+
+<h2>Test 4</h2>
+Name your function <code>myReduce</code>. Implement your own reduce <code>myReduce</code> takes three parameters: the list being operated on, a function to apply the reduction, and seed value to start the reduce. You will need to use a loop.
+
+<script src="challenge-11.js"></script>
+</body>
+</html>
