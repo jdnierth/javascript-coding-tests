@@ -1,0 +1,13 @@
+Further challenges
+1. Use an array to implement 3 stacks
+https://repl.it/@bgando/k-stacks-one-array-prompt
+2. Implement a getMin() or getMax() method on your stack
+https://repl.it/@bgando/min-stack-prompt
+3. Create a queue using 2 stacks
+// We are given a stack data structure with push and pop operations, the task is to implement a queue using instances of stack data structure and operations on them.
+// Remember the interface of a stack & queue: https://www.geeksforgeeks.org/wp-content/uploads/Stack-Queue.png
+4. Sort a stack with the min values in order on top. You can use another stack as a buffer
+https://repl.it/@bgando/sort-stack-prompt
+5. Write a function that returns tru if a string of brackets is valid/balanced.
+https://repl.it/@bgando/bracket-validator-prompt
+https://repl.it/@bgando/bracket-validator-solution

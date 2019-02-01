@@ -1,0 +1,13 @@
+Further challenges
+1.Count the number of occurences of all characters or words in a body of text or string 
+https://repl.it/@bgando/ht-unique-string-prompt
+https://www.geeksforgeeks.org/determine-string-unique-characters/
+2. Delete duplicates in a list
+https://repl.it/@bgando/ht-remove-dups-prompt
+https://www.geeksforgeeks.org/remove-duplicates-from-a-given-string/
+3. Find a unique value in a list
+https://repl.it/@bgando/ht-find-unique-list-prompt
+https://www.geeksforgeeks.org/non-repeating-element/
+4. Find if two integers in a list add up to k
+https://repl.it/@bgando/ht-two-items-sum
+https://www.geeksforgeeks.org/given-an-array-a-and-a-number-x-check-for-pair-in-a-with-sum-as-x/

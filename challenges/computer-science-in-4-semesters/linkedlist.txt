@@ -1,0 +1,22 @@
+Further challenges
+1. a node in the middle of the linked list
+https://repl.it/@bgando/ll-delete-mid-node-prompt
+https://www.geeksforgeeks.org/delete-middle-of-linked-list/
+2. a node with only a variable pointing at that node
+https://repl.it/@bgando/ll-delete-node-no-pointers-prompt
+https://www.geeksforgeeks.org/given-only-a-pointer-to-a-node-to-be-deleted-in-a-singly-linked-list-how-do-you-delete-it/
+3. a duplicate
+https://repl.it/@bgando/ll-delete-dupe-node-prompt
+https://www.geeksforgeeks.org/remove-duplicates-from-an-unsorted-linked-list/
+4. Partition a linked list around a value
+https://repl.it/@bgando/ll-partition-prompt
+https://repl.it/@bgando/ll-partition-solution
+5. Write a function for reversing a linked list. Can you do it in-place?
+https://repl.it/@bgando/ll-reverse-prompt
+https://repl.it/@bgando/ll-reverse-solution
+6. Check if a linked list contains a cycle
+https://repl.it/@bgando/ll-cycle-detect-prompt
+https://www.geeksforgeeks.org/detect-loop-in-a-linked-list/
+7. Find the kth to the last node.
+https://repl.it/@bgando/ll-kth-to-last-node-prompt
+https://repl.it/@bgando/ll-kth-to-last-node-solution
