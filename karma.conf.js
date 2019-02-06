@@ -4,7 +4,8 @@ module.exports = function(config) {
         basePath: '',
         frameworks: ['jasmine'],
         files: [
-            'challenges/computer-science-in-4-semesters/**/*.js'
+            // 'challenges/computer-science-in-4-semesters/**/*.js'
+            'challenges/functional-light-javascript/**/*.js'
         ],
         exclude: [
         ],

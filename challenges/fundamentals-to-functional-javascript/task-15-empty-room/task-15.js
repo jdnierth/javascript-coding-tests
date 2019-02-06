@@ -1,6 +1,6 @@
 (function () {
 
-    const newDevelopment = [
+    var newDevelopment = [
         {
             name: 'Miss Scarlet',
             present: true,
@@ -125,11 +125,11 @@
     var reduceEmptyRooms = reduceToUnique(emptyRooms);
     var result = reduceToEmpty(reduceEmptyRooms,reduceFilledRooms);
 
-    console.log('filled: ', filledRooms);
-    console.log('unique filled: ', reduceFilledRooms);
-    console.log('empty: ', emptyRooms);
-    console.log('unique empty: ', reduceEmptyRooms);
-    console.log('result: ', result);
+    // console.log('filled: ', filledRooms);
+    // console.log('unique filled: ', reduceFilledRooms);
+    // console.log('empty: ', emptyRooms);
+    // console.log('unique empty: ', reduceEmptyRooms);
+    // console.log('result: ', result);
 
 
 })();

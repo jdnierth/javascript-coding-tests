@@ -20,7 +20,7 @@
         return str.toUpperCase();
     }
 
-    console.log(objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy', 'BYE', 'LATER', 'hello'], transform));
+    objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy', 'BYE', 'LATER', 'hello'], transform);
 // should log: { hi: 'HI', bye: 'BYE', later: 'LATER' }
 
 })();
