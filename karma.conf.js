@@ -5,7 +5,8 @@ module.exports = function(config) {
         frameworks: ['jasmine'],
         files: [
             // 'challenges/computer-science-in-4-semesters/**/*.js'
-            'challenges/functional-light-javascript/**/*.js'
+            // 'challenges/functional-light-javascript/challenge 7 - data structures/*.js'
+            'challenges/a-practical-guide-to-algorithms-with-javascript/exercise-1-cache-exercise/*.js'
         ],
         exclude: [
         ],
