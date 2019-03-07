@@ -23,13 +23,13 @@ describe('unique sort with cache', function () {
         var result2 = input2.sort(uniqeSortWithCache.sortAscending);
         var input3 = [1];
         var result3 = input3.sort(uniqeSortWithCache.sortAscending);
-        // var input4 = ['h2llo'];
-        // var result4 = input4.sort(uniqeSortWithCache.sortAscending);
+        var input4 = ['h2llo'];
+        var result4 = input4.sort(uniqeSortWithCache.sortAscending);
 
         expect(result1).toEqual([0,2,3,6,7,10]);
         expect(result2).toEqual([]);
         expect(result3).toEqual([1]);
-        // expect(result4).toEqual(false);
+        expect(result4).toEqual(['h2llo']);
 
         done();
     })
