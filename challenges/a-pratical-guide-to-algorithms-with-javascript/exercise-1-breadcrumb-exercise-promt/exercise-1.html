@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breadcrumb exercise prompt</title>
+</head>
+<body>
+<h1>Task</h1>
+<ul>
+    <li>Transform this simple sorting algorithm into a unique sort. </li>
+    <li>It should not return any duplicate values in the sorted array.</li>
+</ul>
+
+<pre>
+    <code>
+        //input: [1,5,2,1] => output: [1,2,5]
+        //input: [4,2,2,3,2,2,2] => output: [2,3,4]
+    </code>
+</pre>
+
+<h2>Notes</h2>
+<ul>
+    <li>This approach uses caching to keep track of the values that have been already seen</li>
+    <li>As it grows, more values will be cached => linear O(n) space complexity</li>
+</ul>
+
+<script src="exercise-1.js"></script>
+</body>
+</html>
