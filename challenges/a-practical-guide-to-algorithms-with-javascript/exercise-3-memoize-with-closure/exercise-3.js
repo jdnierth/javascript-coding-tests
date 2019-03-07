@@ -5,7 +5,7 @@ var memoization = (function memoization() {
     };
 
     var memoizedClosureTimes10 = function () {
-        var cache = {};
+        var cache = {}; // Isn't being reset everytime the function is being called and not cluttering the global scope.
 
         return function memoTimes10(n) {
             if (cache[n] || cache[n] === 0) {
