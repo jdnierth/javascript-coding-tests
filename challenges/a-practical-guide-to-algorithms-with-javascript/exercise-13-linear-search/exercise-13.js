@@ -1,16 +1,16 @@
 var linearSearch = (function linearSearch() {
 
     /**
-     * Loops through a list of elements one by one until it finds the element the user searches for.
+     * Loops through a list of list one by one until it finds the element the user searches for.
      *
-     * @param {Array} elements that needs to be searched through (aka 'haystack').
-     * @param {Number} n the element the user wants to search for (aka 'needle').
+     * @param {Array} list that needs to be searched through (aka 'haystack').
+     * @param {Number} item the element the user wants to search for (aka 'needle').
      *
-     * @return {Number} i the index on which the element n was found within elements.
+     * @return {Number} i the index on which the element item was found within list.
      */
-    function linearSearch(elements, n) {
-        for(var i = 0, len = elements.length; i < len; i++) {
-            if(elements[i] == n) {
+    function linearSearch(list, item) {
+        for(var i = 0, len = list.length; i < len; i++) {
+            if(list[i] == item) {
                 return i;
             }
         }
