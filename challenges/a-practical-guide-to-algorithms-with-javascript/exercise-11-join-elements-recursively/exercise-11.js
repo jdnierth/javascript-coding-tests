@@ -1,4 +1,4 @@
-var joinElementsIteratively = (function joinElementsIteratively() {
+var joinElementsRecursively = (function joinElementsRecursively() {
 
     function joinElements(stringArray, s) {
 
