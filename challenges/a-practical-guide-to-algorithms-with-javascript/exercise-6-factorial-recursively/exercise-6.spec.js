@@ -9,6 +9,13 @@ describe('Factorial', function () {
         done();
     });
 
+    it('Check if input is of type number', function(done) {
+        expect(factorial.isNaN('hello')).toBeTruthy();
+        expect(factorial.isNaN('1')).toBeFalsy();
+        expect(factorial.isNaN(1)).toBeFalsy();
+        done();
+    });
+
     it('Calculate factorial correctly', function (done) {
         expect(factorial.factorial(0)).toEqual(1);
         expect(factorial.factorial(1)).toEqual(1);
