@@ -64,6 +64,7 @@ var factorial = (function factorial() {
     };
 
     console.log(factorial(4));
+    console.log(factorial(4));
 
     return {
         isNaN: isNaN,
