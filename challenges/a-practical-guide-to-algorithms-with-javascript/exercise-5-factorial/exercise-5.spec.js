@@ -13,6 +13,7 @@ describe('Factorial', function () {
         expect(factorial.factorial(0)).toEqual(1);
         expect(factorial.factorial(1)).toEqual(1);
         expect(factorial.factorial(5)).toEqual(120);
+        expect(function() {factorial.factorial(-1)}).toThrow(new Error('Number has to be > 0'));
 
         done();
     });

@@ -6,6 +6,10 @@ var factorial = (function factorial() {
     }
 
     function factorial(n) {
+
+        if(n < 0) {
+            throw new Error('Number has to be > 0');
+        }
         var result = 1;
 
         for(var i = n; i >= 1; i--) {
