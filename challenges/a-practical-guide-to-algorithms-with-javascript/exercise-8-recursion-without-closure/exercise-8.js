@@ -1,18 +1,14 @@
-var joinElementsIteratively = (function joinElementsIteratively() {
+var MemoFnLoop = (function MemoFnLoop() {
 
-    function joinElements(stringArray, s) {
-        var result = s;
+    function MemoFnLoop(i, end) {
+        console.log('Loop from ' + i + ' until end: ' + end);
 
-        for(var i = 0, len = stringArray.length; i < len; i++) {
-            result += stringArray[i];
+        if(i < end) {
+            MemoFnLoop(i + 1, end);
         }
 
-        return result;
     }
 
-    console.log(joinElements(['h','e','l','l','o'],''));
+    MemoFnLoop(1,6);
 
-    return {
-        joinElements: joinElements
-    }
 })();
