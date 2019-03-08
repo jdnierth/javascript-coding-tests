@@ -9,11 +9,19 @@ describe('Factorial', function () {
         done();
     });
 
+    it('Check if input is of type number', function(done) {
+        expect(factorial.isNaN('hello')).toBeTruthy();
+        expect(factorial.isNaN('1')).toBeFalsy();
+        expect(factorial.isNaN(1)).toBeFalsy();
+        done();
+    });
+
     it('Calculate factorial correctly', function (done) {
         expect(factorial.factorial(0)).toEqual(1);
         expect(factorial.factorial(1)).toEqual(1);
         expect(factorial.factorial(5)).toEqual(120);
         expect(function() {factorial.factorial(-1)}).toThrow(new Error('Number has to be > 0'));
+        expect(function() {factorial.factorial('hello')}).toThrow(new Error('Number expected but character given'));
 
         done();
     });
