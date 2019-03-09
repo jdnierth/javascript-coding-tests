@@ -17,11 +17,14 @@ describe('BinarySearch', function () {
         done();
     });
 
-    // TODO: Solve duplicates.
-    // it('BinarySearch returns the first index if there are multiple items', function (done) {
-    //     expect(binarySearch.binarySearch([1, 2, 3, 5, 5, 7], 5)).toEqual(4);
-    //     expect(binarySearch.binarySearch([1, 2, 5, 5, 7], 5)).toEqual(2);
-    //
-    //     done();
-    // });
+    it('Find first element', function (done) {
+        expect(binarySearch.findFirstItem([1, 2, 2, 2, 5], 3)).toEqual(1);
+        expect(binarySearch.findFirstItem([1, 2, 3, 4], 2)).toEqual(2);
+
+        expect(function () {
+            binarySearch.findFirstItem([], 3)
+        }).toThrow(new Error('List is empty'));
+
+        done();
+    });
 });
