@@ -1,0 +1,36 @@
+/**
+ * Improvement on recursive version of fibonnaci by using memoization (a form of caching)
+ *
+ * @author: Jessica Nierth
+ * @date: 15.03.2019
+ */
+var fibrekMemo = (function fibrekMemo() {
+
+    var memoFib = memoFibiter();
+
+    function fibiter(n) {
+
+        var result = 0;
+
+        for (var i = 0; i < n; i++) {
+            if (n === 0 || n === 1) return n;
+
+            result = fibiter(n - 2) + fibiter(n - 1);
+        }
+
+        return result;
+
+    }
+
+    function memoFibiter() {
+        var cache = {};
+
+        return function (n) {
+            if (!cache[n]) {
+                cache[n] = fibiter(n - 1) + fibiter(n - 2);
+            }
+
+            return cache[n];
+        }
+    }
+});

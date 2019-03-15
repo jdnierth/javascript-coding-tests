@@ -31,7 +31,3 @@ var fibrekMemo = (function fibrekMemo() {
     }
 
 });
-
-/*
-* Big O is O(n^2) as there are 2 functions are being called for each n.
-*/

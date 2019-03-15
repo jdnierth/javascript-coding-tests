@@ -1,0 +1,39 @@
+/**
+ * Improvement on recursive version of fibonnaci by using memoization (a form of caching)
+ *
+ * @author: Jessica Nierth
+ * @date: 15.03.2019
+ */
+var fibrekMemo = (function fibrekMemo() {
+
+    function fibrek(n) {
+
+        if (n === 0 || n === 1) return n;
+
+        return fibrek(n - 2) + fibrek(n - 1);
+
+    }
+
+    // Declare a function, that you can call later
+    function memoizeClosureFibRek() {
+        var cache = {};
+
+        return function(n) {
+            if(!cache[n]) {
+                cache[n] = fibrek(n);
+            }
+            return cache[n];
+        }
+    }
+
+    var memoizeRek = memoizeClosureFibRek();
+
+    return {
+        fibrekMemo: fibrekMemo
+    }
+
+});
+
+/*
+* Big O is O(n^2) as there are 2 functions are being called for each n.
+*/
