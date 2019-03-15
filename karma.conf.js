@@ -6,7 +6,7 @@ module.exports = function(config) {
         files: [
             // 'challenges/computer-science-in-4-semesters/**/*.js'
             // 'challenges/functional-light-javascript/challenge 7 - data structures/*.js'
-            'challenges/a-practical-guide-to-algorithms-with-javascript/exercise-1-cache-exercise/*.js'
+            'challenges/a-practical-guide-to-algorithms-with-javascript/exercise-15-bubble-sort/*.js'
         ],
         exclude: [
         ],
