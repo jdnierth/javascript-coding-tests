@@ -9,10 +9,18 @@ var fibrekMemo = (function fibrekMemo() {
 
     function fibrek(n) {
 
+        var result;
+
         if (n === 0 || n === 1) return n;
 
-        if(!cache[n]) {
-            cache[n] = fibrek(n - 2) + fibrek(n - 1);
+        result = memoFibrek(n - 2) + memoFibrek(n - 1);
+
+        return result;
+    }
+
+    function memoFibrek(n) {
+        if (!cache[n]) {
+            cache[n] = fibrek(n);
         }
 
         return cache[n];
