@@ -6,31 +6,28 @@
  */
 var fibrekMemo = (function fibrekMemo() {
 
-    var memoFib = memoFibiter();
+    var cache = {};
 
     function fibiter(n) {
+        var result;
 
-        var result = 0;
+        if (n === 0 || n === 1) {
+            result = n;
+        }
 
         for (var i = 0; i < n; i++) {
-            if (n === 0 || n === 1) return n;
 
-            result = fibiter(n - 2) + fibiter(n - 1);
+            if (!cache[n]) {
+
+                cache[n] = fibiter(n - 2) + fibiter(n - 1);
+
+            } else {
+
+                result = cache[n];
+            }
         }
 
         return result;
 
-    }
-
-    function memoFibiter() {
-        var cache = {};
-
-        return function (n) {
-            if (!cache[n]) {
-                cache[n] = fibiter(n - 1) + fibiter(n - 2);
-            }
-
-            return cache[n];
-        }
     }
 });
