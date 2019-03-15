@@ -32,3 +32,7 @@ var fibiter = (function fibiter() {
     }
 
 });
+
+/*
+* Big O is O(n - 2) => O(n) to describe the worst case scenario.
+*/
