@@ -1,0 +1,24 @@
+/**
+ * SOME DESCRIPTION
+ *
+ * @author: Jessica Nierth
+ * @date: 15.03.2019
+ */
+var fibrek = (function fibrek() {
+
+    function fibrek(n) {
+
+        // could be written in if (n < 2) return n
+        if (n === 0) return 0;
+        if (n === 1) return 1;
+
+        if (n > 1) {
+            return fibrek(n - 2) + fibrek(n - 1);
+        }
+    }
+
+    return {
+        fibrek: fibrek
+    }
+
+});
