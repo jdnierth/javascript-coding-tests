@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merge sort</title>
+</head>
+<body>
+<h1>Tasks</h1>
+<ul>
+    <li>
+        Make a function <code>mergeSort</code> that sorts a list of numbers.
+    </li>
+    <li>
+        Steps:
+        <ul>
+            <li>1. If the length of the list is < 2, return</li>
+            <li>2. Break the list into 2 halves (left, right)</li>
+            <li>3. LeftSort = mergeSort(leftList)</li>
+            <li>4. RightSort = mergeSort(rightList)</li>
+            <li>5. Return merge(leftList, rightList)</li>
+        </ul>
+    </li>
+    <li>
+        Tip: Split the array into halves and merge them recursively.
+    </li>
+    <li>
+        Compare the arrays item by item and return the concatenated result.
+    </li>
+</ul>
+
+<h2>Notes</h2>
+<ul>
+    <li>MergeSort divides the array until it has lists of length 1.</li>
+    <li>The time complexity for mergeSort is O(n log n). log n is because of the cutting in halves. n is from merging
+        the results together.
+    </li>
+</ul>
+
+<script src="exercise-16.js"></script>
+</body>
+</html>
