@@ -104,10 +104,10 @@
 <pre>
     <code>
         function sayNames() {
-           var results;
+           var results = "";
 
            for(var i = 0; i< arguments.length; i++) {
-            results += 'Hi ' + arguments[i] + '\n' ;
+            results += 'Hi ' + arguments[i] + '\n';
            }
 
             return this.result = results;
@@ -116,8 +116,11 @@
         var people1 = {};
         var people2 = {};
 
-        sayNames.apply(people2, ['Bea', 'Marcus', 'Hera']);
-        sayNames.call(people1, 'Anna', 'Hector', 'John');
+        sayNames.call(people1,'Anna','Bernd','Carl','Daniel');
+        sayNames.apply(people2,['Emma','Ferdinand','Gustav','Herbert']);
+
+        console.log(people1.result);
+        console.log(people2.result);
     </code>
 </pre>
 
