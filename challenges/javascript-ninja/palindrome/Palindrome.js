@@ -1,7 +1,16 @@
-
+/**
+ * Recursive implementation of the function palindrome.
+ *
+ * A palindrome is a text that is the same no matter if it is read from back to front or v.v.
+ *
+ * @param {string} word
+ * @param {number} n
+ * @returns {*}
+ */
 function isPalindrome(word, n) {
 	
-	var n = n || 0;
+	n = n || 0;
+
 	var wlength = word.length; 
 	var leftIndex = n;
 	var rightIndex = wlength - 1 - n;
