@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The value of this</title>
+</head>
+<style>
+    pre {
+        background-color: #efefef;
+        border: 1px solid #ccc;
+        margin: 20px 0;
+        padding: 10px;
+    }
+
+    .warning {
+        background: #FFB2B2;
+        border: 1px solid #ff0000;
+        padding: 10px;
+    }
+</style>
+<body>
+<h1>This</h1>
+<ul>
+    <li>The value of this depends on how a function is being called not how it is being declared.</li>
+</ul>
+<h2>How can you declare a function?</h2>
+<ol>
+    <li>Calling a function <strong>directly</strong></li>
+    <li>Calling a function as a <strong>method</strong></li>
+    <li>Calling a function as a <strong>constructor</strong></li>
+    <li>Calling a function with <strong><code>apply</code></strong> and <strong><code>call</code></strong></li>
+</ol>
+<p><em>Der Unterschied besteht darin, welches Objekt am Ende den Funktionskontext bildet.</em></p>
+<h2>1. Calling a function directly</h2>
+<pre>
+    <code>
+        function sayHi() {
+            console.log('Hello');
+        }
+
+        sayHi();
+    </code>
+</pre>
+<p>
+    Beim Aufruf als Funktion ist das globale Objekt (window) ist der Kontext. </p>
+
+<h2>2. Calling a function as a method</h2>
+<pre>
+    <code>
+        var person = {}
+        person.sayHello = function() {
+            console.log('Hi');
+        }
+
+        person.sayHello();
+
+    </code>
+</pre>
+<p>
+    Beim Aufruf als Methode (ein property eines Objekts) ist der Kontext das Objekt von dem aus die Methode aufgerufen
+    wird. </p>
+
+<h2>3. Aufruf als Konstruktor</h2>
+
+<pre>
+    <code>
+        function Person() {
+            function sayHello() {
+                console.log('Hi');
+            }
+        }
+
+        var person1 = new Person();
+        person1.sayHello();
+    </code>
+</pre>
+<p>
+    Beim Aufruf als Konstruktor passieren 3 Dinge: </p>
+<ol>
+    <li>Es wird ein neues leeres Objekt erstellt</li>
+    <li>this wird an das neu erstellte Objekt gebunden - dient als Funktionskontext des Konstruktors</li>
+    <li>Falls es keinen expliziten Rückgabewert gibt, wird das neu erstellte Objekt zurückgegeben</li>
+</ol>
+<p class="warning">
+    Für jede Instanz von Person wird eine neue Eigenschaft "sayHello" angelegt. </p>
+<p>
+    Der Zweck beim Programmieren von Konstruktoren ist die Initialisierung des neuen Objekts mit bestimmten
+    Anfangswerten. </p>
+<p>Konstruktoren haben den Vorteil das der Code lediglich einmal geschrieben wird und sich für wiederholte Erstellung
+    mehrerer Objekte eignet.</p>
+<h2>Was wäre beim Aufruf eine Konstruktorfunktion ohne den <code>new</code> Operator?</h2>
+<pre>
+    <code>
+        function Person() {
+            function sayHello() {...}
+        }
+        var person1 = Person()
+    </code>
+</pre>
+<p>
+    Das Resultat wäre dass die Eigenschaft <code>sayHello</code> für das window Objekt erzeugt und person1 das window
+    Objekt beinhalten würde. </p>
+<h2>4. Aufruf einer Funktion mit call oder apply</h2>
+<pre>
+    <code>
+        function sayNames() {
+           var results;
+
+           for(var i = 0; i< arguments.length; i++) {
+            results += 'Hi ' + arguments[i] + '\n' ;
+           }
+
+            return this.result = results;
+        }
+
+        var people1 = {};
+        var people2 = {};
+
+        sayNames.apply(people2, ['Bea', 'Marcus', 'Hera']);
+        sayNames.call(people1, 'Anna', 'Hector', 'John');
+    </code>
+</pre>
+
+
+</body>
+</html>
