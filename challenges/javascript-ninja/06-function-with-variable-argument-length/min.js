@@ -15,11 +15,13 @@ var myMinAndMax = (function () {
      */
     function max(numbers) {
         // TODO: handle case of empty array.
+        // Note: It is not necessary to define the Math object as its context but it is cleaner.
         return Math.max.apply(Math, numbers);
     }
 
     function min(numbers) {
         // TODO: handle case of empty array.
+        // Note: It is not necessary to define the Math object as its context but it is cleaner.
         return Math.min.apply(Math, numbers);
     }
 
