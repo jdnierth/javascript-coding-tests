@@ -7,7 +7,8 @@
 var myObjectMerge = (function () {
 
     function mergeObject(object) {
-        for(var i = 0; i < arguments.length; i++) {
+        // starting at 1 as the first is already part of the object
+        for(var i = 1; i < arguments.length; i++) {
             for(var key in arguments[i]) {
                 object[key] = arguments[i][key];
             }
