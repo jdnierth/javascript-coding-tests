@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closures</title>
+    <style>
+        pre {
+            background-color: #efefef;
+            border: 1px solid #ccc;
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        .warning {
+            background: #FFB2B2;
+            border: 1px solid #ff0000;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>What is a Closure?</h1>
+<p>
+    A Closure ist der Gültigkeitsbereich, der bei der Deklaration einer Funktion erstellt wird und ihr ermöglicht, auf externe Variablen zuzugreifen und diese zu ändern. Closures gestatten einer Funktion den Yugriff auf alle Variablen und anderen Funktionen die sich innerhalb des Geltungsbereiches (a.k.a Scopes) befinden, in dem die Funktion selbst deklariert ist.
+</p>
+<p>Eine deklarierte Funktion kann auch zu einem späteren Zeitpunkt aufgerufen werden, d.h. ihr Scope in dem sie deklariert wurde ist eigentlich nicht mehr vorhanden. Durch die Closures kann jedoch trotzdem noch darauf zugegriffen werden.</p>
+
+<h2>Beispiel eines Closures</h2>
+
+<h3>1. Beispiel: Wert und Funktion im selben Scope</h3>
+<pre>
+    <code>
+        // Definiert einen Wert im globalen Scope
+        var outerValue = "Ninja";
+
+        // Deklariert eine Funktion im globalen Scope
+        function outerFunction() {
+            assert(outerValue == "Ninja", "I can see the ninja");
+        }
+
+        // Führt die Funktion aus.
+        outerFunction();
+    </code>
+</pre>
+
+<p>Sowohl der äußere Wert als auch die Funktion sind in demselben Gültigkeitsberei (Scope) ß der ebenfalls eine Closure ist, der immer existiert, solange die Seite geladen ist.
+</p>
+
+<h3>2. Beispiel: Functions with different Scopes</h3>
+<pre>
+    <code>
+        var outerValue = "Ninja";
+
+        // Deklariert eine leere Variable für den späteren Gebrauch
+        var later;
+
+        function outerFunction() {
+            // Deklariert einen Wert innerhalb der Funktion. Der Scope dieser Variablen ist auf die Funktion beschränkt und gestattet keinen Zugriff von außen.
+            var innerValue = "Samurai";
+
+            // Deklariert eine innere Funktion innerhalb der äußeren Funktion.
+            // innerFunction befindet sich bei der Deklaration innerhalb des Scopes.
+            function innerFunction() {
+                assert (outerValue, "I can see a Ninja");
+                assert (innerValue, "I can see a Samurai");
+                assert (tooLate, "I can see Ronin");
+            }
+
+            // Speichert eine Referenz auf die innere Funktion in der Variablen "later".
+            // Da sich later im globalen Scope befindet, ermöglicht sie den Aufruf der Funktion zu einem späteren Zeitpunkt.
+            later = innerFunction;
+        }
+
+        var tooLate = "Ronin";
+
+        outerFunction();
+
+        // Aktiviert die innere Funktion durch "later". Ein direkter Aufruf ist nicht möglich, weil ihr Scope beschränkt ist.
+        later(); // I can see a Ninja, I can see a Samurai
+
+    </code>
+</pre>
+
+<p>Wenn die innere Funktion ausgeführt wird, wurde der Scope der äußeren Funktion längst verlassen und ist an dem Punkt, an dem sie mittels later aufgerufen wird, nicht mehr sichtbar.
+</p>
+
+<p>
+    Bei der Deklaration von innerFunction() innerhalb der äußeren Funktion wurde nihct nur die innere Funktion definiert, sondern auch eine Closure erschaffen, die sowohl die Funktionsdeklaration als auch alle zum Zeitpunkt der Deklaration im Scope befindlichen Variablen erschließt.
+</p>
+
+<p>
+    <code>tooLate</code>Alle Variablen in einem äußeren Scope, selbst diejenigen, die nach der Funktionsdeklaration deklariert wurden sind im Closure mit inbegriffen
+</p>
+
+<p>
+    Variablen, die nohc nicht definiert sind, k;;nnen nicht innerhalb desselben Scopes vorw'rtsreferenziert werden.
+</p>
+
+<p>
+    Wird also innerFunction() ausgeführt ß selbst nachdem der Scope in dem sie deklariert wurde, bereits verlassen wurde, hat sie durch ihre Closure trotzdem weiterhin Zugriff auf den ursprünglichen Scope.
+</p>
+
+<p class="warning">
+    Obwohl die Closures enorm nützlich sind, sind sie trotzdem auch mit einigem Verwaltungsaufwand belastet, weil sämtliche Daten im Speicher verbleiben müssen, bis f[r die JavaScript-Engine zweifelsfrei klar ist, dass sie nicht mehr benötigt werden.
+</p>
+<!-- /.warning -->
+</body>
+</html>
