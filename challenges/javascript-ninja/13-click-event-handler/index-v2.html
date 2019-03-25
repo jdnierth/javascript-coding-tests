@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closure - Click event handler</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+
+        .menu {
+            border: 1px solid #b3caff;
+            float: left;
+            padding: 40px;
+            width: calc(20% - 82px);
+        }
+
+        .menu li {
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            border: 1px solid #efefef;
+            float: left;
+            height: calc(100vh - 82px);
+            padding: 40px;
+            width: calc(80% - 82px);
+        }
+    </style>
+</head>
+
+<body>
+
+<ul class="menu">
+    <li>Home</li>
+    <li>About</li>
+    <li>Contact us</li>
+</ul>
+
+<div class="content">
+    xxx
+</div>
+<!-- /.content -->
+<script>
+    (function menu() {
+        var menu = document.getElementsByClassName('menu');
+        var content = document.getElementsByClassName('content');
+
+        console.log([].slice.call(menu[0].childNodes, 0).filter(getLis));
+        var lis = menu[0].childNodes;
+
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].addEventListener("click", printTitle, false);
+        }
+
+        function getLis(el) {
+            return el.nodeName.toLowerCase() == 'li';
+        }
+
+        function printTitle(e) {
+            var link = e.target;
+
+            content[0].childNodes[0].textContent = link.textContent;
+        }
+
+    })();
+</script>
+</body>
+</html>
