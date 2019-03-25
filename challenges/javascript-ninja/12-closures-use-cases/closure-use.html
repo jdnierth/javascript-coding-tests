@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closures - Use cases</title>
+    <style>
+        pre {
+            background-color: #efefef;
+            border: 1px solid #ccc;
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        .warning {
+            background: #FFB2B2;
+            border: 1px solid #ff0000;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>For what can Closures be used?</h1>
+
+<ol>
+    <li>Encapsulation of data - create "private variables"</li>
+    <li>Callbacks und Timer</li>
+</ol>
+
+<h3>Beispiel zu Fall 1: Encapsulation with Closures</h3>
+<pre>
+    <code>
+        function Ninja() {
+            var feints = 0;
+
+            this.getFeints = function() {
+                return feintsl
+            }
+
+            this.feint = function() {
+                feints++;
+            }
+        }
+
+        var ninja = new Ninja();
+
+        ninja.feint();
+
+        assert(ninja.getFeints() == 1, "We are able to access the internal feint count.");
+        assert(ninja.feints === undefined, "And the private data is inaccessible now.");
+
+    </code>
+</pre>
+<p>Encapsulation with version of a constructor.</p>
+<h3>Beispiel zu Fall 1: Encapsulation without a constructor</h3>
+<pre>
+    <code>
+        var ninja = (function() {
+
+            var feints = 0;
+
+            function getFeints() {
+                return feints;
+            }
+
+            return  {
+                getFeints: getFeints
+            }
+        });
+
+        ninja().getFeints();
+    </code>
+</pre>
+<h3>Callbacks und Timer</h3>
+<p>In beiden Fällen erfolgt zu einem nihct spezifizierten späteren Zeitpunkt ein asynchroner Aufruf einer Funktion, wobei dann häufig der Zugriff auf externe Daten erforderlich ist.</p>
+</body>
+</html>
