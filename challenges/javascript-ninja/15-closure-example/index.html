@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closure Example</title>
+    <style>
+        pre {
+            background-color: #efefef;
+            border: 1px solid #ccc;
+            margin: 20px 0;
+            padding: 10px;
+        }
+
+        div {
+            border:1px solid #ccc;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .warning {
+            background: #FFB2B2;
+            border: 1px solid #ff0000;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Task</h1>
+<p>Click on any of the div elements below. Given the corresponding js code, what wil it's output be
+and why?</p>
+<div>Div 0 - click me</div>
+<div>Div 1 - click me</div>
+<div>Div 2 - click me</div>
+<div>Div 3 - click me</div>
+
+<pre>
+    <code>
+        var divs = document.getElementsByTagName('div');
+
+        for(var i = 0; i < divs.length; i++) {
+            divs[i].addEventListener('click', function() {
+                alert("Div " + i + " was clicked.")
+            },false);
+        }
+    </code>
+</pre>
+<!--<script src="closure-broken.js"></script>-->
+<script src="closure-fixed.js"></script>
+</body>
+</html>
