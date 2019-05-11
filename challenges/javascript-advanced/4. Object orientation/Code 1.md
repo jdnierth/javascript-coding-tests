@@ -26,7 +26,7 @@ person.sayHello();
  
 #Q: How can you prevent the `this` keyword being the global object?
 
-* Make sure the code runs in the `use strict` mode.
+## Solution 1: Make sure the code runs in the `use strict` mode.
 ```
 var person = {
     name:"Jessica",
@@ -49,4 +49,29 @@ var person = {
 person.sayHello();
 ```
 * In this scenario the code in line 40 `this.foo = 1` will fail with a `TypeError: Cannot set property foo of 
-undefined` since the `use strict` mode will prevent the keyword `this` to be set on the global object. 
+undefined` since the `use strict` mode will prevent the keyword `this` to be set on the global object.
+
+## Solution 2: Use self
+```
+var person = {
+    name:"Jessica",
+    sayHello: function() {
+        var self = this;
+        
+        console.log(self); // 1.
+        
+        function checkMe() {
+            console.log(self); // 2. 
+            self.foo = 1; 
+        }
+        
+        checkMe();
+        
+        console.log(self.foo) // 3.
+    }
+}
+
+person.sayHello();
+```
+* In this scenario the code the property `foo` will be attached to what the value of the `this` keyword will be bound
+ to which is the object `person`.  
