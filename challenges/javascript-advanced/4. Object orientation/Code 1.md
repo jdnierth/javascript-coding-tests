@@ -46,7 +46,7 @@ var person = {
     }
 }
 
-person.sayHello();
+person.sayHello();  
 ```
 * In this scenario the code in line 40 `this.foo = 1` will fail with a `TypeError: Cannot set property foo of 
 undefined` since the `use strict` mode will prevent the keyword `this` to be set on the global object.
@@ -75,3 +75,72 @@ person.sayHello();
 ```
 * In this scenario the code the property `foo` will be attached to what the value of the `this` keyword will be bound
  to which is the object `person`.  
+ 
+## Solution 2: Use bind
+```
+ var person = {
+     name:"Jessica",
+     sayHello: function() {
+         
+         console.log("1:", this); // 1.
+         
+         var checkMe = function checkMe() {
+             console.log("2: ", this); // 2. 
+             this.foo = 1; 
+         }.bind(this); // 'this' is the person object
+         
+         checkMe();
+         
+         console.log("3: ",this.foo) // 3.
+     }
+ }
+ 
+ person.sayHello();
+```
+* Note: Bind only works with function expressions!!!
+ 
+ ## Solution 3: Use call
+ ```
+ var person = {
+     name:"Jessica",
+     sayHello: function() {
+         
+         console.log("1:", this); // 1.
+         
+         function checkMe() {
+             console.log("2: ", this); // 2. 
+             this.foo = 1; 
+         }
+         
+         checkMe.call(person); // or checkMe.call(this)
+         
+         console.log("3: ",this.foo) // 3.
+     }
+ }
+ 
+ person.sayHello();
+ ``` 
+ 
+ * Using bind you can fix the value of this to whatever value(s) you pass in.
+ 
+ ## Solution 4: Use apply
+ ```
+ var person = {
+     name:"Jessica",
+     sayHello: function() {
+         
+         console.log("1:", this); // 1.
+         
+         function checkMe() {
+             console.log("2: ", this); // 2. 
+             this.foo = 1; 
+         }
+         
+         checkMe.apply(null, [person]); // or checkMe.call(this)
+         
+         console.log("3: ",this.foo) // 3.
+     }
+ }
+ 
+ person.sayHello();
+ ```
