@@ -24,5 +24,5 @@ Solution: CORS gets around this by sending out a `pre-flight request` request. I
 
 #Takeaway
 * If you receive a CORS error and you don't have any control over the server there is nothing you can do.
-* Whoever has control over the server needs to make sure they are sending the right headers in response to your 
-request.
+* Whoever has control over the server needs to make sure they are sending the right headers with the 
+`Allow-Access-Control-Origin` with the proper values in the response in correspondence your request. 
