@@ -7,3 +7,4 @@
 * typeof(undefined) == 'undefined'
 * In JavaScript null and undefined are each values with their own type whereas in other languages they represent the 
 absence of values.
+* null == undefined && undefined == null// true
