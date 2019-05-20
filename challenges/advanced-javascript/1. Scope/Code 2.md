@@ -11,6 +11,8 @@ c;              //4
 * 2: undefined
 * 3: 2
 * 4: undefined in non strict mode and ReferenceError in strict mode with c is not defined
+* Hoisting happens at compile time
+* Let isn't hoisted
 
 #How does the compiler actually read the code
 * The engine will compile the code first before it executes it
@@ -24,4 +26,3 @@ var b = 2;
 b;
 c;
 ```
-* Hoisting happens at compile time

@@ -18,6 +18,7 @@ var d = function() {
 * The code below shows how the compiler will read the code
 * 1 undefined
 * 2 undefined is not a function
+* function declarations get hoisted first
 
 ```
 function b() {
