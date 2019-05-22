@@ -16,13 +16,8 @@ deepJS.ask("Is 'prototype' a class?");  // Kyle is 'prototype' a class?
 reactJS.ask("Isn't 'prototype' ugly?"); // Suzy Isn't 'prototype' ugly?
 ```
 
- ![Diagram](https://github.com/jdnierth/javascript-coding-tests/tree/master/challenges/deep-javascript-foundations/12
- -Prototypes/00-diagram.png)
+ ![Diagram](https://github.com/jdnierth/javascript-coding-tests/blob/master/challenges/deep-javascript-foundations/12-Prototypes/00-diagram.PNG)
  
- ![Classical Inheritance](https://github.com/jdnierth/javascript-coding-tests/tree/master/challenges/deep-javascript
- -foundations/12
- -Prototypes/01-classical-inheritance.png)
+ ![Classical Inheritance](https://github.com/jdnierth/javascript-coding-tests/blob/master/challenges/deep-javascript-foundations/12-Prototypes/01-classical-inheritance.PNG)
  
- ![Prototypal inheritance](https://github.com/jdnierth/javascript-coding-tests/tree/master/challenges/deep-javascript
- -foundations/12
- -Prototypes/02-prototypal-inheritance.png)
+ ![Prototypal inheritance](https://github.com/jdnierth/javascript-coding-tests/blob/master/challenges/deep-javascript-foundations/12-Prototypes/02-prototypal-inheritance.PNG)
