@@ -1,6 +1,9 @@
 var api = require('./api');
 
 showPostsForCurrentUser = (userId, cb) => {
+  // In order to not have to write api.getPostsForUsers but just getPostsForUsers you would require the module
+  // differently with:
+  // var { getPostsForUser } = require('./api');
   api.getPostsForUser(userId, posts => {
     const postTemplates = posts.map(post => {
       return `
