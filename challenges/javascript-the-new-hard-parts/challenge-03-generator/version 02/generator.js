@@ -19,3 +19,9 @@ var elem2 = returnNextElement.next(2); // 7
 // newly evaluated number of the newNum constant.
 
 // If the code will call returnNextElement.next() it would return 6 of line 5.
+
+// Note: Generator also return an object with the properties of value and done as with the iterator before.
+
+// Why is a generator considered being powerful?
+// you can potentially create a generator that is infinite (e.g. for calculating fibonnaci numbers) as long as it is
+// yielding.
