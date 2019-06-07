@@ -1,21 +1,20 @@
-function doWhenDataReceived(value) {
-	returnNextElement.next(value);
-}
-
-function *createFlow() {
-	const data = yield fetch("https://twitter.com/will/tweets");
+async function createFlow() {
+	console.log("Me first");
+	const data = await fetch("https://twitter.com/tweet/1");
 	console.log(data);
 }
 
-const returnNextElement = createFlow();
-const futureData = returnNextElement.next();
-
-futureData.then(doWhenDataReceived);
+createFlow();
+console.log("Me second!");
 
 // INFO
-// We can use the ability to pause createFlow's running and then continue it only when our data returns
-// We get to control when we return back to createFlow and continue executing - by setting up the trigger to do so
-// (returnNextElement.next()) to be run by our function that was triggered by the promise resolution (when the value
-// returned from twitter).
+// Async/await simplifies and fixes the inversion of control problem of callbacks
+// No need for a trigger function on the promise resolution, instead we auto trigger the resumption of the
+// createFlow execution (this functionality is still added to the microtask queue though)
 
-// Note: this will automated by async await
+// await is throwing us out of the createFlow execution context
+
+// Will print out
+// "Me first"
+// "Me second!"
+// "Hi" - Message from twitter
