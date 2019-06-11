@@ -22,6 +22,7 @@ function readLine() {
     return inputString[currentLine++];
 }
 */
+
 // Complete the insertionSort1 function below.
 /**
  *
@@ -40,20 +41,20 @@ function insertionSort1(n, arr) {
         var l = r - 1;
 
 
-        while (l >= -1) {
+        while (l >= 0) {
 
             // Step 3: Check the first value next to the unsorted element
-            var left = (l == -1) ? arr[0] : arr[l];
+            var left = arr[l];
 
-            if(l == -1) {
-                arr[l+2] = left;
-                arr[l+1] = lastVal;
-                lastVal == null;
-                console.log(arr.join(" "))
-                // Step 3.1: Swap left to one position to the right
-            }else if (lastVal < left) {
-                arr[l+1] = left;
+            if (lastVal < left) {
+                arr[l + 1] = left;
                 console.log(arr.join(" "));
+
+                if(l == 0) {
+                    arr[l] = lastVal;
+                    console.log(arr.join(" "));
+                }
+
             } else {
                 arr[l + 1] = lastVal;
                 lastVal = null;
@@ -78,14 +79,16 @@ function main() {
     insertionSort1(n, arr);
 }
 
-//insertionSort1(5, [2,4,6,8,3]);
+// Example 1
+// insertionSort1(5, [2,4,6,8,3]);
 // Expected output
 // 2 4 6 8 8
 // 2 4 6 6 8
 // 2 4 4 6 8
 // 2 3 4 6 8
 
-insertionSort1(10, [2,3,4,5,6,7,8,9,10,1]);
+// Example 2
+insertionSort1(10, [2, 3, 4, 5, 6, 7, 8, 9, 10, 1]);
 // 2 3 4 5 6 7 8 9 10 10
 // 2 3 4 5 6 7 8 9 9 10
 // 2 3 4 5 6 7 8 8 9 10
