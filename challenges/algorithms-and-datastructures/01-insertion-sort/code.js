@@ -40,7 +40,8 @@ function inPlaceInsertionSort(numbers) {
         var rightValue = numbers[i];
         var j = i - 1;
 
-        // Move elements of arr[0..u-1], that are greater than the rightValue, to one position ahead of their current position
+        // If rightValue is < then leftValue, shift the sorted value one index to the right, otherwise
+        //
         while (j >= 0 && numbers[j] > rightValue) {
             numbers[j + 1] = numbers[j];
             console.log(numbers.join(" "));
