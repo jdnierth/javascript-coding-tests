@@ -34,30 +34,24 @@ now repeat for next unsorted element
  * @param  {Array} numbers array of numbers to sort
  */
 function inPlaceInsertionSort(numbers) {
-    var len = numbers.length;
 
-    for(var y = len - 1; y > 0; y--) {
+    for (var i = 1, len = numbers.length; i < len; i++) {
 
-        // 1. Take the last item
-        var cur = numbers[y],
-            x = y - 1;
+        var rightValue = numbers[i];
+        var j = i - 1;
 
-        // TODO: After swap the y coordinate is not correct
-        while(x >= 0) {
-            var left = numbers[x];
-            // 2.1 If last item < previous item, swap in place
-            if(cur < left) {
-                numbers[x] = cur;
-                numbers[y] = left;
-                console.log(numbers.join(' '));
-            }
-            // 2.2 If last item > previous item, keep as is
-
-            x--;
+        // Move elements of arr[0..u-1], that are greater than the rightValue, to one position ahead of their current position
+        while (j >= 0 && numbers[j] > rightValue) {
+            numbers[j + 1] = numbers[j];
+            console.log(numbers.join(" "));
+            j--;
         }
+
+        numbers[j + 1] = rightValue;
+        console.log(numbers.join(" "));
     }
 
     return numbers;
 }
 
-inPlaceInsertionSort([2,3,1,7]);
+inPlaceInsertionSort([4, 5, 1, 2, 3]);
