@@ -2,6 +2,8 @@
  * Write a function that generates all combinations of a set of characters based on a given string.
  * Assume that all characters will be capitalized.
  *
+ * - 3 characters = 3! Permutations = 3 * 2 * 1 = 6 combinations
+ *
  * @param {string} word
  */
 function generateAnagrams(word) {
@@ -55,7 +57,7 @@ function generateAnagrams(word) {
 // 5.3 Push the character taken out into the new array
 // 5.4 Increment the index
 // 5.5 Continue action 5.1 - 5.4 until the cpInput array is empty
-console.log(generateAnagrams("ABC"));
+console.log(generateAnagrams("ABCD"));
 
 
 function getUniquePermutations(characters) {
@@ -80,7 +82,7 @@ function getUniquePermutations(characters) {
     return results;
 }
 
-console.log(getUniquePermutations("ABC"));
+console.log(getUniquePermutations("ABCD"));
 
 // Pseudocode
 // ===========
@@ -95,3 +97,25 @@ console.log(getUniquePermutations("ABC"));
 //  foreach string in innerPermutations
 //    add defined char and innerPermutations char
 //  return results
+
+
+//TODO: CHECK THIS SOLUTION, DOESNT SEEM TO BE RIGHT
+/*function getPermutationsOfString(inputString) {
+
+    let permutations = [];
+
+    for(let i = 0; i < inputString.length; i++) {
+        const startLetter = inputString[i];
+        const remainingChars = inputString.substring(0,i) + inputString.substring(i + 1);
+        let remainingCharsArray = remainingChars.split("");
+
+        for(let j = 0; j<remainingCharsArray.length; j++) {
+            permutations.push(startLetter + remainingCharsArray.join(""));
+            remainingCharsArray.unshift(remainingCharsArray.pop());
+        }
+    }
+    return permutations;
+}
+
+console.log(getPermutationsOfString("ABCD"));
+*/
