@@ -56,3 +56,42 @@ function generateAnagrams(word) {
 // 5.4 Increment the index
 // 5.5 Continue action 5.1 - 5.4 until the cpInput array is empty
 console.log(generateAnagrams("ABC"));
+
+
+function getUniquePermutations(characters) {
+    var results = [];
+
+    if (characters.length === 1) {
+        results.push(characters);
+        return results;
+    }
+
+    for (var i = 0; i < characters.length; i++) {
+        var firstChar = characters[i];
+
+        // All other characters without the first character
+        var remainingChars = characters.substring(0, i) + characters.substring(i + 1),
+            innerPermutations = getUniquePermutations(remainingChars);
+
+        for (var j = 0; j < innerPermutations.length; j++) {
+            results.push(firstChar + innerPermutations[j]);
+        }
+    }
+    return results;
+}
+
+console.log(getUniquePermutations("ABC"));
+
+// Pseudocode
+// ===========
+// function getAllPermutations (string)
+// define results
+// if string is a single character
+//  add the character to results
+//  return results
+//for each char in string
+//  define innerPermutations as a char of string
+//  set innerPermutations to getAllPermutations (without next char)
+//  foreach string in innerPermutations
+//    add defined char and innerPermutations char
+//  return results
