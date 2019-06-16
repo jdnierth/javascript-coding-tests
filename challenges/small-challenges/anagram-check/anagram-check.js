@@ -20,8 +20,11 @@ function isAnagram(word1, word2) {
     // If there is a character in word1 that couldn't be found in word2, return false (is not an anagram)
     var w1 = word1.split("");
 
-    // Step 4: Result will contain any characters that were found within word 2
+    // Step 4 - Solution 1: Result will contain any characters that were found within word 2
     var result = w1.filter(findCharacter(word2));
+
+    // Step 4 - Solution 2: sort characters of each word alphabetically after unifying them and
+    // compare word1 and word2, if they are different, it is not an anagram.
 
     // Step 5: If the result array doesn't have the same length than word1, it can't be an anagram
     return (result.length == w1.length);
