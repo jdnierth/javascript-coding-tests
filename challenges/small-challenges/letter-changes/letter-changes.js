@@ -10,7 +10,12 @@ function letterChange(sentence) {
 }
 
 function letterTransformation(currentValue, index) {
-    if (currentValue.trim() != '') {
+
+    currentValue = currentValue.toLowerCase();
+
+    if(currentValue == 'z' || currentValue == 'Z') {
+        return 'A';
+    } else if (currentValue.trim() != '') {
 
         // Returns the character code of the current value
         var newCharCode = (currentValue.charCodeAt() + 1),
