@@ -4,10 +4,13 @@
  */
 function flattenArray(numbers){
     // Solution 1
-    return numbers.reduce(reduceToOne, []);
+    //return numbers.reduce(reduceToOne, []);
 
     // Solution 2
     // return [].concat.apply([], numbers);
+
+    // Solution 3
+    // return [].concat(...numbers);
 }
 
 function reduceToOne(acc, number) {
